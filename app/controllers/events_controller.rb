@@ -31,6 +31,7 @@ class EventsController < ApplicationController
       redirect_to @event
     else
       render 'events/edit'
+    end
   end
 
   def destroy
