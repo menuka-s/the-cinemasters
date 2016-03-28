@@ -8,6 +8,7 @@ class EventsController < ApplicationController
   end
 
   def new
+    @movie = Movie.new
     @event = Event.new
   end
 
