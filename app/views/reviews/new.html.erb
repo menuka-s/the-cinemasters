@@ -1,0 +1,28 @@
+Enter your review of
+
+<%= form_for @review do |f| %>
+
+  <% if @review.errors.any? %>
+    <%= @review.errors.full_messages.each do |error| %>
+      <%= error %>
+    <% end %>
+  <% end %>
+
+  <% labels = ["Rubric 1","Rubric 2","Rubric 3","Rubric 4","Rubric 5","Rubric 6","Rubric 7","Rubric 8","Rubric 9"] %>
+
+  <% 9.times do |x| %>
+    <%= labels[x] %>:
+    <% 10.times do |y| %>
+      <input type="radio" name="rubric<%=y+1%>" value="<%=y+1%>"> <%=y+1%>
+    <% end %>
+    <br>
+  <% end %>
+
+
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+<br>
+
+  <%= f.submit %>
+
+<% end %>

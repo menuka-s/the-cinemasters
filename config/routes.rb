@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :critics
   resources :events
 
+  get '/reviews/new/:event_id' => 'reviews#new'
+
+  resources :reviews
 
 
   get '/login' => 'sessions#new'
