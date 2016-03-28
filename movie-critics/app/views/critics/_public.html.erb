@@ -2,5 +2,5 @@
 <br>
 
 <% @critic.joined_events.each do |event| %>
-  <%= event.name %> for <%= event.movie.name %> <br>
+  <%= link_to event.movie.name, "/reviews/" + event.reviews.find_by(critic_id: @critic.id).id.to_s %> <br>
 <% end %>

@@ -6,7 +6,7 @@ Your email address: <%= @critic.email %>
 <br>
 You have been invited to pariticipate in:<br>
 <% @critic.joined_events.each do |event| %>
-  <%= link_to event.name, "/events/" + event.id.to_s %><br>
+  <%= link_to event.name, event %><br>
 <% end %>
 <br>
 
