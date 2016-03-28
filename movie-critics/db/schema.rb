@@ -22,7 +22,8 @@ ActiveRecord::Schema.define(version: 20160328183558) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.datetime "pub_date"
+    t.date     "pub_date"
+    t.string   "name"
     t.integer  "creator_id"
     t.integer  "movie_id"
     t.datetime "created_at", null: false
@@ -34,7 +35,8 @@ ActiveRecord::Schema.define(version: 20160328183558) do
 
   create_table "movies", force: :cascade do |t|
     t.string   "name"
-    t.string   "imbd_url"
+    t.string   "imdb_url"
+    t.string   "img_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
