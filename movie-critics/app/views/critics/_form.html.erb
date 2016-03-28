@@ -1,0 +1,24 @@
+<%= form_for @critic do |f| %>
+
+  <% if @critic.errors.any? %>
+    <%= @critic.errors.full_messages.each do |error| %>
+      <%= error %>
+    <% end %>
+  <% end %>
+<br>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+<br>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+<br>
+  <%= f.label :password %>
+  <%= f.text_field :password %>
+<br>
+  <%= f.label :password_confirmation %>
+  <%= f.text_field :password_confirmation %>
+<br>
+  <%= f.submit %>
+
+<% end %>
+
