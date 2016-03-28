@@ -1,1 +1,24 @@
-New Movie Form
+
+<%= form_for @movie do |f| %>
+
+  <% if @movie.errors.any? %>
+    <%= @movie.errors.full_messages.each do |error| %>
+      <%= error %>
+    <% end %>
+  <% end %>
+<div class = "movie-name">
+  Movie Name:
+  <%= f.text_field :name %>
+</div>
+<div class = "movie-name">
+  Movie Imdb Url:
+  <%= f.text_field :imdb_url %>
+</div>
+<div class = "movie-name">
+  Movie Image Url:
+  <%= f.text_field :img_url %>
+</div>
+
+  <%= f.submit %>
+
+<% end %>

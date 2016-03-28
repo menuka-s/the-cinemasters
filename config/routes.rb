@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :critics
   resources :events
-
+  resources :movies
 
 
   get '/login' => 'sessions#new'
