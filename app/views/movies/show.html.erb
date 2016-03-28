@@ -1,0 +1,11 @@
+<div class="show-movie-container">
+	<h1 class="movie-tite"><%= @movie.name %></h1>
+
+	<div class="movie-image">
+		<%= image_tag(@movie.img_url) %>
+	</div>
+
+	<div>
+		<%= link_to "IMDB", @movie.imdb_url %>
+	</div>
+</div>

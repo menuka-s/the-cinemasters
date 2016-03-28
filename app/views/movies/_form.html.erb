@@ -1,1 +1,17 @@
-New Movie Form
+<div class="create-movie-form">
+	<%= form_for @movie do |f| %>
+		<p>
+			<%= f.label "Movie Name" %>
+			<%= f.text_field :movie %>
+		</p>
+		<p>
+			<%= f.label "Image URL" %>
+			<%= f.text_field :img_url %>
+		</p>
+		<p>
+			<%= f.label "IMDB Link" %>
+			<%= f.text_field :imdb_url %>
+		</p>
+			<%= f.submit %>
+	<% end %>
+</div>
