@@ -1,7 +1,15 @@
 $(document).ready(function(){
   $("#new_movie").on("submit", function(){
     event.preventDefault();
-    var name = $("#movie_name").val();
-    var imdbUrl = $("#movie_name").val();
+    var data = $(this).serialize();
+    $.ajax({
+      type: "POST",
+      url: "/movies/create",
+      data: data
+      })
+    .done(function(response){
+      $("#new_movie").toggle()
+
+    })
   });
 })

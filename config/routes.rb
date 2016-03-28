@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resources :critics
-  resources :events
+  resources :events, except: :index
   resources :movies
 
 
