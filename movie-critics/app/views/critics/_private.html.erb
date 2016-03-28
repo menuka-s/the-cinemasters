@@ -1,1 +1,14 @@
-This is the partial critic/_private.html.erb
+<h2>Welcome <%= @critic.username %> </h2>
+
+<h3>This is your profile page!</h3>
+Your username: <%= @critic.username %><br>
+Your email address: <%= @critic.email %>
+<br>
+You have been invited to pariticipate in:<br>
+<% @critic.joined_events.each do |event| %>
+  <%= link_to event.name, "/events/" + event.id.to_s %><br>
+<% end %>
+<br>
+
+
+

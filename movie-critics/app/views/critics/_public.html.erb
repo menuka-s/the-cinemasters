@@ -1,1 +1,6 @@
-This is the partial critic/_public.html.erb
+<h2><%= @critic.username %>'s Reviews</h2>
+<br>
+
+<% @critic.joined_events.each do |event| %>
+  <%= event.name %> for <%= event.movie.name %> <br>
+<% end %>
