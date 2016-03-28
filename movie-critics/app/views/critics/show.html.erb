@@ -1,9 +1,10 @@
 <h1>Shitty Initial critics/show.html.erb</h1>
 
-<%= @critic.username %>
-<br>
-  <%= render 'critics/public' %>
-<br>
+
 <% if !!current_user %>
   <%= render 'critics/private' %>
 <% end %>
+<br>
+  <%= render 'critics/public' %>
+<br>
+
