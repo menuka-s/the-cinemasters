@@ -12,5 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require-ui
+//= require jquery-ui
 //= require_tree .
