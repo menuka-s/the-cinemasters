@@ -23,8 +23,8 @@ body {
 }
 
 #center {
-	margin-left: 27.5em;
-	float: left;
+	margin-right: 35em;
+	float: right;
 	text-align: center;
 }
 
@@ -79,7 +79,7 @@ nav ul li a:hover {
 }
 
 form {
-	margin: 0 auto; 
+	margin: 5em auto; 
 	width:250px;
 	text-align: center;
 }
@@ -90,12 +90,25 @@ form input {
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
 	margin-top: 1em;
+	margin-bottom: 1em;
 	width: 250px;
 	display: block;
 }
 
 form input:focus {
 	outline-width: 0;
+}
+
+form input[type=submit] {
+	background-color: none;
+	color: black;
+	transition: all 0.5s linear;
+}
+
+form input[type=submit]:hover {
+	background-color: black;
+	color: white;
+	transition: all 0.5s linear;
 }
 
 .main {
@@ -150,6 +163,13 @@ form input:focus {
 	filter: gray;
   filter: grayscale(1);
   -webkit-filter: grayscale(1);
+  transition: all 0.5s;
+}
+
+.review-image:hover {
+	filter: none;
+	-webkit-filter: grayscale(0%);
+  transition: all 0.5s;
 }
 
 /*.review-image img {
@@ -190,6 +210,13 @@ form input:focus {
   filter: grayscale(1);
   -webkit-filter: grayscale(1);
 	background-size: cover;
+  transition: all 0.5s;
+}
+
+.review-2-image:hover {
+	filter: none;
+	-webkit-filter: grayscale(0%);
+  transition: all 0.5s;
 }
 
 .review-2-image p, .review-2-image h1 {
@@ -241,6 +268,13 @@ form input:focus {
   filter: grayscale(1);
   -webkit-filter: grayscale(1);
 	background-size: cover;
+	transition: all 0.5s;
+}
+
+.critic-review-image:hover {
+	filter: none;
+	-webkit-filter: grayscale(0%);
+  transition: all 0.5s;
 }
 
 .critic-review-content {
@@ -315,4 +349,23 @@ form input:focus {
 
 .down {
 	font-size: 32px;
+}
+
+.profile-image {
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+	border: 0.1px solid black;
+	margin: 2em;
+	filter: gray;
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+	transition: all 0.5s;
+}
+
+.profile-image:hover {
+	filter: none;
+	filter: grayscale(0);
+	-webkit-filter: grayscale(0);
+	transition: all 0.5s;
 }
