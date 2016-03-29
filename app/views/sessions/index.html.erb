@@ -1,2 +1,5 @@
 <a href='/login'>Login</a>
 <a href='/logout'>Logout</a>
+<% if current_user %>
+  <%= link_to "Home", current_user %>
+<% end %>
