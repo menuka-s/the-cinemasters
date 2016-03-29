@@ -83,3 +83,6 @@ Review.create(critic: Critic.find(3), event: Event.find(5), content: Faker::Lore
 Review.create(critic: Critic.find(4), event: Event.find(5), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,4,3,5,7")
 
 Review.create(critic: Critic.find(5), event: Event.find(5), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,4,3,5,7")
+
+Critic.create(username: "iank", email: "ian@ian.com", password: "password")
+Review.create(event_id: 1, critic_id: 6, ratings: "", content: "")
