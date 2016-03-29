@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to @critic
     else
       @errors = ["Incorrect Username/password"]
-      render 'critics/new'
+      render 'sessions/new'
     end
   end
 
