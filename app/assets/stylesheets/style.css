@@ -79,7 +79,7 @@ nav ul li a:hover {
 }
 
 form {
-	margin: 5em auto; 
+	margin: 5em auto;
 	width:250px;
 	text-align: center;
 }
@@ -329,7 +329,7 @@ input[type=submit]:hover {
 	width: 10%;
 	height: 100%;
 	float: right;
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZJREFUeNpi2r9//38gYGAEESAAEGAAasgJOgzOKCoAAAAASUVORK5CYII=); 
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZJREFUeNpi2r9//38gYGAEESAAEGAAasgJOgzOKCoAAAAASUVORK5CYII=);
 }
 
 #critic-event a {
@@ -371,6 +371,7 @@ input[type=submit]:hover {
 .down {
 	font-size: 32px;
 }
+
 
 .profile-image {
 	border-radius: 50%;
@@ -429,6 +430,7 @@ input[type=submit]:hover {
 	color: gray;
 	transition: all 0.5s;
 }
+
 
 .rating-criterias {
 	display: block;
@@ -500,6 +502,7 @@ input[type=submit]:hover {
 	-webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   transition: all 0.5s;
+  background-size: cover;
   color: white;
 }
 
@@ -540,3 +543,4 @@ input[type=submit]:hover {
 	width: 100%;
 	border-bottom: 1px gray solid;
 }
+
