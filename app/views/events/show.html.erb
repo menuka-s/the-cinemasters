@@ -3,6 +3,10 @@ show.html.erb
 <h2>Event: <%= @event.name %> is a review for <%= @event.movie.name %></h2>
 
 The following reviews are for this event:<br><br>
+<style>
+li a {color: #00F;}
+ul {text-align: left;}
+</style>
 <ul>
   <% @event.reviews.each do |review| %>
     <li><%= link_to review.critic.username, review %>
@@ -10,7 +14,7 @@ The following reviews are for this event:<br><br>
           (Started or Completed)
         <% end %>
         <% if review.critic.id == current_user.id %>
-          <a href="/reviews/new/<%=@event.id%>"> (Create / Edit your review) </a>
+          <a href="/reviews/<%=@event.reviews.find_by(critic_id: session[:user_id]).id%>/edit"> (Create / Edit your review) </a>
         <% end %>
         </li>
   <% end %>
