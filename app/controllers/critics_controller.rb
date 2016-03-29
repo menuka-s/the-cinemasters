@@ -1,15 +1,15 @@
 class CriticsController < ApplicationController
 
-  def index
-  end
+  # def index
+  # end
 
   def show
     @critic = Critic.find(params[:id])
   end
 
-  def new
-    @critic = Critic.new
-  end
+  # def new
+  #   @critic = Critic.new
+  # end
 
   def edit
   end
