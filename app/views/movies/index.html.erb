@@ -1,0 +1,9 @@
+<div class="movies-container">
+	<% @movies.each do |movie| %>
+		<div class="movie-box">
+			<img class="movie-image" src="<%= movie.img_url %>" alt="<%= movie.name %>">
+			<h1 class="movie-title"><%= link_to "#{movie.name}", movie %></h1>
+			<a href="<%= movie.imdb_url %>" class="imdb-link">[IMDB link here]</a>
+		</div>
+	<% end %>
+</div>
