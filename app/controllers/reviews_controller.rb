@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
   #ajax handler to make a review
-  def invite_handler
+  def invite_handler #not restful, not pretty. but works splendidly.
     (action,event_id,critic_id) = params[:data].split(',')
     if (action == "i")
       review = Review.new({event_id: event_id, critic_id: critic_id, content: "", ratings: ""})
@@ -45,6 +45,10 @@ class ReviewsController < ApplicationController
   def edit
     @labels = ["Writing","Acting","Directing","Spec Effects","Score","Artistic"]
     @review = Review.find(params[:id])
+    if @review.critic_id != session[:user_id]
+      redirect_to '/'
+    end
+
   end
 
 #   def create
@@ -65,11 +69,15 @@ class ReviewsController < ApplicationController
   def update
     rubrics_string = rubrics_to_string(params[:review])
     @review = Review.find(params[:id])
-      @review.update_attributes({content: params[:review][:content], ratings: rubrics_string})
-    if @review.save
-      redirect_to @review.event
+    @review.update_attributes({content: params[:review][:content], ratings: rubrics_string})
+    if @review.critic_id == session[:user_id]
+      if @review.save
+        redirect_to @review.event
+      else
+        render "review/edit"
+      end
     else
-      render "review/edit"
+      render 'reviews/access_denied'
     end
   end
 
