@@ -12,8 +12,13 @@ This is reviews/show.html.erb
 <h2>Review for <%= @review.movie.name %></h2>
 
 <% @review.ratings.split(',').each_with_index do |val,index| %>
-Value<%= index %> is <%= val %> / 10 <br>
+	<%if index < 5 %>
+		<%= @labels[index] %> is <%= val %> / 10 <br>
+	<% else %>
+		<%= @labels[index] %> is <%= val %> / 50 <br>
+	<% end %>
 <% end %>
+<h3>Overall score: <%= @total %></h3>
 <br><br>
 <p><%= @review.content %></p>
 
