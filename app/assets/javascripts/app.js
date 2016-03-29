@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	$(".bar").hide();
 	$(".review").hide();
 	$( ".down" ).animate({
     fontSize: "5em"
@@ -43,4 +44,6 @@ $(document).ready(function() {
 			$(this).addClass("slide-left", 500, "linear");
 		};
 	});
+
+	$(".bar").toggle();
 });

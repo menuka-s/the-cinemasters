@@ -1,26 +1,39 @@
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=120085081428346";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<div class="main">
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=120085081428346";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
 
-This is reviews/show.html.erb
+	<h2>Review for <%= @review.movie.name %></h2>
+	<h3><%= @review.critic.username %></h3>
 
-<h2>Review for <%= @review.movie.name %></h2>
+	<div class="review-images">
+		<img src="<%= @review.critic.profile_image %>">
+		<img src="<%= @review.movie.img_url %>">
+	</div>
 
-<% @review.ratings.split(',').each_with_index do |val,index| %>
-Value<%= index %> is <%= val %> / 10 <br>
-<% end %>
-<br><br>
-<p><%= @review.content %></p>
+	<div class="rating-criterias">
+		<% @review.ratings.split(',').each_with_index do |val,index| %>
+		<div class="bar" style="background-color: black ;width: <%= val %>0%;height: 20px"><p>Criteria <%= index %> | Score <%= val %> / 10</p></div>
+		<% end %>
+	</div>
+
+	<div class="rating-content">
+		<p><%= @review.content %></p>
+	</div>
 
 
-<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div>
+	<div class="social">
+		<div class="fa  fa-facebook-square"></div>
 
 
-<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
+		<a href="https://twitter.com/share">
+			<div class="fa fa-twitter-square"></div>
+		</a>
+	</div>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</div>
