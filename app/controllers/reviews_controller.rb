@@ -45,6 +45,7 @@ class ReviewsController < ApplicationController
   def edit
     @labels = ["Writing","Acting","Directing","Spec Effects","Score","Artistic"]
     @review = Review.find(params[:id])
+    redirect_to @review if @review.event.pub_date <= Date.today
   end
 
 #   def create

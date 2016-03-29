@@ -16,8 +16,13 @@ module ReviewsHelper
     false
   end
 
+  def is_editable?(review)
+    return true if review.event.pub_date > Date.today
+    return false
+  end
+
   def is_invited?(critic, event)
     critic.joined_events.include?(event)
   end
-  
+
 end
