@@ -34,6 +34,7 @@ gem 'paperclip', '~> 4.2'
 
 gem 'papercrop'
 
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
