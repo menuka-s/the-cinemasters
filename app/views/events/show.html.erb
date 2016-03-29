@@ -1,26 +1,27 @@
-show.html.erb
+<div class="main">
+  <h2><%= @event.name %></h2>
+  <h3 class="gray">REVIEWING</h3>
+  <h1><%= @event.movie.name %></h1>
+  <div class="border"></div>
 
-<h2>Event: <%= @event.name %> is a review for <%= @event.movie.name %></h2>
+  <div class="event-review-container">
+    <p class="gray">REVIEWS FOR THIS EVENT ARE</p>
+      <% @event.reviews.each do |review| %>
+        <div class="event-review" style="background-image: url(<%= review.critic.profile_image %>)">
+          <h1><%= link_to review.critic.username, review %></h1>
+            <% if review_has_data(review) %>
+              <p>STARTED OR COMPLETED</p>
+            <% end %>
+          <% if review.critic.id == current_user.id %>
+            <p><a href="/reviews/<%=@event.reviews.find_by(critic_id: session[:user_id]).id%>/edit"> (Create / Edit your review) </a></p>
+          <% end %>
+        </div>
+      <% end %>
+  </div>
 
-The following reviews are for this event:<br><br>
-<style>
-li a {color: #00F; display:block;}
-ul {text-align: left;}
-</style>
-<ul>
-  <% @event.reviews.each do |review| %>
-    <li><%= link_to review.critic.username, review %>
-        <% if review_has_data(review) %>
-          (Started or Completed)
-        <% end %>
-        <% if review.critic.id == current_user.id %>
-          <a href="/reviews/<%=@event.reviews.find_by(critic_id: session[:user_id]).id%>/edit"> (Create / Edit your review) </a>
-        <% end %>
-        </li>
-  <% end %>
-</ul>
-
-<% if @event.creator_id = session[:user_id] %>
-  <a href="/events/<%= @event.id %>/invite">Event Admin: Select Reviewers</a>
-<% end %>
-
+    <div class="event-review-button">
+      <% if @event.creator_id = session[:user_id] %>
+        <input type="submit" value="SELECT REVIEWERS" onclick='window.location="/events/<%= @event.id %>/invite";' />
+      <% end %>
+    </div>
+</div>
