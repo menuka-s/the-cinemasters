@@ -1,11 +1,31 @@
-<div class="show-movie-container">
-	<h1 class="movie-tite"><%= @movie.name %></h1>
 
-	<div class="movie-image">
-		<%= image_tag(@movie.img_url) %>
-	</div>
+	<div class="show-movie-container">
+		<h1 class="movie-tite"><%= @movie.name %></h1>
 
-	<div>
-		<%= link_to "IMDB", @movie.imdb_url %>
+		<div class="movie-image" style="background-image: url(<%= @movie.img_url %>)">
+			<!-- <%= image_tag(@movie.img_url) %> -->
+		</div>
+
+		<div>
+			<%= link_to "IMDB", @movie.imdb_url, :class => "black-link" %>
+		</div>
+
+		<% @movie.events.each do |event| %>
+		<div class="event-container">
+			<h1><%= event.name %></h1>
+			<% event.reviews.each do |review| %>
+				<div class="review">
+					<div class="review-image" style="background-image: url(<%= review.critic.profile_image %>)">
+					</div>
+					<div class="review-content">
+						<p>Added <%= time_ago_in_words(review.created_at) %> ago</p>
+						<h1 class="black-link"><%= link_to review.critic.username, "/critics/" + review.critic.id.to_s %></h1>
+						<p><%=truncate( review.content, length: 90 ) %></p>
+						<input type="submit" value="READ REVIEW" 
+    onclick='window.location="/reviews/<%= review.id %>";'' />  
+					</div>
+				</div>
+			<% end %>
+		</div>
+		<% end %>
 	</div>
-</div>
