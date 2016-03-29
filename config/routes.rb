@@ -4,10 +4,12 @@ Rails.application.routes.draw do
 
   resources :critics
 
+  get '/events/:event_id/invite' => 'reviews#create'
   resources :events, except: :index
   resources :movies
   get '/reviews/new/:event_id' => 'reviews#new'
   resources :reviews
+  post '/reviews/invite_handler' => 'reviews#invite_handler'   #not restful. sorry
 
 
   get '/login' => 'sessions#new'

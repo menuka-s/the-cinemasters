@@ -12,7 +12,7 @@
 		</div>
 		<div class="review-content">
 			<p>Added <%= time_ago_in_words(movie.created_at) %> ago</p>
-			<h1><%= movie.name %></h1>
+			<h1 class="black-link"><%= link_to movie.name, "/movies/" + movie.id.to_s %></h1>
 		</div>
 	</div>
   <% end %>
@@ -21,8 +21,8 @@
     <div class="review-2">
       <div class="review-2-image" style="background-image: url(<%= movie.img_url %>)">
         <p>Added <%= time_ago_in_words(movie.created_at) %> ago</p>
-        <h1><%= movie.name %></h1>
+        <h1 class="white-link"><%= link_to movie.name, "/movies/" + movie.id.to_s %></h1>
       </div>
     </div>
-    <% end %>
+  <% end %>
 </div>

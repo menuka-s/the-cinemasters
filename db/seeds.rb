@@ -16,15 +16,15 @@ Movie.create(name: "Argo", imdb_url: "http://www.imdb.com/title/tt1024648/", img
 
 Movie.create(name: "The Artist", imdb_url: "http://www.imdb.com/title/tt1655442/", img_url: "https://generationfilm.files.wordpress.com/2011/11/artist_primary.jpg")
 
-Critic.create(username: "Garfield Pincenez", password: "password", email: "radical_saint@yahoo.net")
+Critic.create(username: "Garfield Pincenez", password: "password", email: "radical_saint@yahoo.net", profile_image: File.new("#{Rails.root}/public/profile.jpeg"))
 
-Critic.create(username: "Charles Fournier", password: "password", email: "turkishdelight44@comcast.net")
+Critic.create(username: "Charles Fournier", password: "password", email: "turkishdelight44@comcast.net", profile_image: File.new("#{Rails.root}/public/profile.jpeg"))
 
-Critic.create(username: "Kerry Collins", password: "password", email: "awalkonthewordside@aol.com")
+Critic.create(username: "Kerry Collins", password: "password", email: "awalkonthewordside@aol.com", profile_image: File.new("#{Rails.root}/public/profile.jpeg"))
 
-Critic.create(username: "Arthur Mastersonsen", password: "password", email: "squidwordwasright@boosh.org")
+Critic.create(username: "Arthur Mastersonsen", password: "password", email: "squidwordwasright@boosh.org", profile_image: File.new("#{Rails.root}/public/profile.jpeg"))
 
-Critic.create(username: "Camel Cayce", password: "password", email: "donttellmomthebabysittersisdead@gmail.com")
+Critic.create(username: "Camel Cayce", password: "password", email: "donttellmomthebabysittersisdead@gmail.com", profile_image: File.new("#{Rails.root}/public/profile.jpeg"))
 
 Event.create(pub_date: Date.today, name: "Everyone but Camel.", creator: Critic.find(1), movie: Movie.find(1))
 
@@ -84,5 +84,5 @@ Review.create(critic: Critic.find(4), event: Event.find(5), content: Faker::Lore
 
 Review.create(critic: Critic.find(5), event: Event.find(5), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,4,3,5,7")
 
-Critic.create(username: "iank", email: "ian@ian.com", password: "password")
+Critic.create(username: "iank", email: "ian@ian.com", password: "password", profile_image: File.new("#{Rails.root}/public/profile.jpeg"))
 Review.create(event_id: 1, critic_id: 6, ratings: "", content: "")

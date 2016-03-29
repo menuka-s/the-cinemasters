@@ -23,7 +23,8 @@ body {
 }
 
 #center {
-	float: middle;
+	margin-right: 35em;
+	float: right;
 	text-align: center;
 }
 
@@ -64,6 +65,50 @@ nav ul li {
 nav ul li a {
 	color: white;
 	text-decoration: none;
+	transition: all 0.5s linear;
+}
+
+nav ul li a:hover {
+	color: gray;
+	transition: all 0.5s linear;
+}
+
+.login {
+	width: 80%;
+	margin: 5em auto;
+}
+
+form {
+	margin: 5em auto;
+	width:250px;
+	text-align: center;
+}
+
+form input {
+	background: #f6f6f6;
+	border: none;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	width: 250px;
+	display: block;
+}
+
+form input:focus {
+	outline-width: 0;
+}
+
+form input[type=submit] {
+	background-color: none;
+	color: black;
+	transition: all 0.5s linear;
+}
+
+form input[type=submit]:hover {
+	background-color: black;
+	color: white;
+	transition: all 0.5s linear;
 }
 
 .main {
@@ -98,6 +143,17 @@ nav ul li a {
 /*	overflow: hidden;*/
 }
 
+.review a {
+	color: black;
+	text-decoration: none;
+	transition: all 0.5s linear;
+}
+
+.review a:hover {
+	color: gray;
+	transition: all 0.5s linear;
+}
+
 .review-image {
 	display: inline-block;
 	float: left;
@@ -107,6 +163,13 @@ nav ul li a {
 	filter: gray;
   filter: grayscale(1);
   -webkit-filter: grayscale(1);
+  transition: all 0.5s;
+}
+
+.review-image:hover {
+	filter: none;
+	-webkit-filter: grayscale(0%);
+  transition: all 0.5s;
 }
 
 /*.review-image img {
@@ -147,16 +210,36 @@ nav ul li a {
   filter: grayscale(1);
   -webkit-filter: grayscale(1);
 	background-size: cover;
+  transition: all 0.5s;
+}
+
+.review-2-image:hover {
+	filter: none;
+	-webkit-filter: grayscale(0%);
+  transition: all 0.5s;
 }
 
 .review-2-image p, .review-2-image h1 {
 	background-color: #000;
 }
 
+.review-2-image h1 a {
+	padding: 0.5em;
+	font-size: 24px;
+	color: white;
+	text-decoration: none;
+	transition: all 0.5s linear;
+}
+
+.review-2-image h1 a:hover {
+	color: gray;
+	transition: all 0.5s linear;
+}
+
 .critic-review {
 	display: block;
 	width: 80%;
-	height: 150px;
+	height: 200px;
 	border-top: 1px solid gray;
 	border-bottom: 1px solid gray;
 	margin: 2em auto;
@@ -166,26 +249,40 @@ nav ul li a {
 .critic-review a {
 	color: black;
 	text-decoration: none;
+	transition: all 0.5s linear;
+}
+
+.critic-review a:hover {
+	color: gray;
+	transition: all 0.5s linear;
 }
 
 .critic-review-image {
-	display: inline-block;
 	float: left;
+	display: inline-block;
 	width: 30%;
+	height: 100%;
+	color: white;
+	text-align: center
+	filter: gray;
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+	background-size: cover;
+	transition: all 0.5s;
 }
 
-.critic-review-image img {
-	float: left;
-	height: 150px;
-	width: 100%;
-	-webkit-filter: grayscale(100%);
-	filter: grayscale(100%);
+.critic-review-image:hover {
+	filter: none;
+	-webkit-filter: grayscale(0%);
+  transition: all 0.5s;
 }
 
 .critic-review-content {
-	text-align: left;
+	margin-left: 2em;
+	font-size: 16px;
 	display: inline-block;
-	float: right;
+	text-align: left;
+	float: left;
 	width: 60%;
 }
 
@@ -212,6 +309,17 @@ nav ul li a {
 	height: 100%;
 	float: right;
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZJREFUeNpi2r9//38gYGAEESAAEGAAasgJOgzOKCoAAAAASUVORK5CYII=);
+}
+
+#critic-event a {
+	color: black;
+	text-decoration: none;
+	transition: all 0.5s linear;
+}
+
+#critic-event a:hover {
+	color: gray;
+	transition: all 0.5s linear;
 }
 
 .slide-left {
@@ -242,3 +350,24 @@ nav ul li a {
 .down {
 	font-size: 32px;
 }
+
+
+.profile-image {
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+	border: 0.1px solid black;
+	margin: 2em;
+	filter: gray;
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+	transition: all 0.5s;
+}
+
+.profile-image:hover {
+	filter: none;
+	filter: grayscale(0);
+	-webkit-filter: grayscale(0);
+	transition: all 0.5s;
+}
+
