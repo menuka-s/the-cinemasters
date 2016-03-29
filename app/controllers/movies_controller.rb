@@ -1,20 +1,14 @@
 class MoviesController < ApplicationController
 
-  def index
-  end
 
-  def show
-    # @event = Event.find(params[:id])
-  end
+	def index
+		@movies = Movie.all
+	end
 
-  def new
-    # @movie = Movie.new
+	def new
+		@movie = Movie.new
     # @event = Event.new
-  end
-
-  def edit
-    # @event = Event.find(params[:id])
-  end
+	end
 
   def create
     @movie = Movie.new(movie_params)
@@ -26,23 +20,28 @@ class MoviesController < ApplicationController
     end
   end
 
+	def show
+		@movie = Movie.find(params[:id])
+    # @event = Event.find(params[:id])
+	end
+
+  def edit
+    # @event = Event.find(params[:id])
+  end
+
   def update
-    # @event = Event.find(params[:id])
-    # if @event.update_attributes(event_params)
-    #   redirect_to @event
-    # else
-    #   render 'events/edit'
-    # end
+
   end
 
-  def destroy
-    # @event = Event.find(params[:id])
-    # @event.destroy
-  end
+	def destroy
+		@movie.find(params[:id]).destroy
+	end
 
-  private
-    def movie_params
-      params.require(:movie).permit(:name, :imdb_url, :img_url)
-    end
+	private
+
+	def movie_params
+		params.require(:movie).permit(:name, :img_url, :imdb_url)
+	end
 
 end
+
