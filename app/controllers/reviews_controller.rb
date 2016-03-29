@@ -80,6 +80,7 @@ class ReviewsController < ApplicationController
     string = ""
     9.times do |i|
       puts "\n\n\n\n\n\n#{input}\n\n\n\n\n\n"
+      input["rubric" + (i+1).to_s] ||= "0"
       string += input["rubric" + (i+1).to_s] + ","
     end
     return string
