@@ -1,9 +1,7 @@
 <div class="main">
-	<h1><%= @critic.username.upcase %> REVIEWS</h1>
 
-	<% if !!current_user %>
+	<% if @critic.id == session[:user_id] %>
 	  <%= render 'critics/private' %>
 	<% end %>
-
 	  <%= render 'critics/public' %>
 </div>
