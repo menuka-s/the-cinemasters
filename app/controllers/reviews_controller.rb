@@ -2,8 +2,22 @@ class ReviewsController < ApplicationController
 
   #ajax handler to make a review
   def invite_handler
-    puts "\n\n\n\n\n\n\n#{params}\n\n\n\n\n"
-    redriect_to '/events/6/invite'
+    (action,event_id,critic_id) = params[:data].split(',')
+    if (action == "i")
+      review = Review.new({event_id: event_id, critic_id: critic_id, content: "", ratings: ""})
+      if review.save
+        render json: {action:"i", event_id: event_id, critic_id: critic_id}
+      else
+        render json: "error"
+      end
+    elsif (action == "u")
+      review = Review.find_by(event_id: event_id, critic_id: critic_id)
+      if review.destroy
+        render json: {action:"u", event_id: event_id, critic_id: critic_id}
+      else
+        render json: "error"
+      end
+    end
   end
 
   def index
