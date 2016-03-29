@@ -1,22 +1,28 @@
-<!-- <a href='/login'>Login</a>
-<a href='/logout'>Logout</a> -->
-<div id="cover"></div>
-  <div class="splash">
-  	<h1>WELCOME</h1>
-  </div>
-  <div class="down fa fa-caret-down"></div>
-  <div class="main">
-  	<h1 class="tagline">REVIEWS</h1>
+<!-- <div id="cover"></div> -->
+<div class="splash">
+	<h1>WELCOME</h1>
+</div>
+<div class="down fa fa-caret-down"></div>
+<div class="main">
+	<h1 class="tagline">MOVIES</h1>
 
-    <% Movie.all.each do |movie| %>
-  	<div class="review">
-  		<div class="review-image">
-  			<img src="<%= movie.img_url %>">
-  		</div>
-  		<div class="review-content">
-  			<p>Added <%= time_ago_in_words(movie.created_at) %> ago</p>
-  			<h1><%= movie.name %></h1>
-  		</div>
-  	</div>
+  <% Movie.all.each do |movie| %>
+	<div class="review">
+		<div class="review-image" style="background-image: url(<%= movie.img_url %>)">
+		</div>
+		<div class="review-content">
+			<p>Added <%= time_ago_in_words(movie.created_at) %> ago</p>
+			<h1><%= movie.name %></h1>
+		</div>
+	</div>
+  <% end %>
+
+  <% Movie.all.each do |movie| %>
+    <div class="review-2">
+      <div class="review-2-image" style="background-image: url(<%= movie.img_url %>)">
+        <p>Added <%= time_ago_in_words(movie.created_at) %> ago</p>
+        <h1><%= movie.name %></h1>
+      </div>
+    </div>
     <% end %>
-  </div>
+</div>

@@ -1,6 +1,12 @@
-<h2><%= @critic.username %>'s Reviews</h2>
-<br>
-
 <% @critic.joined_events.each do |event| %>
-  <%= link_to event.movie.name, "/reviews/" + event.reviews.find_by(critic_id: @critic.id).id.to_s %> <br>
+	<h1 class="tagline"><%= @critic.username.upcase %> REVIEWS</h1>
+
+  <div class="critic-review">
+		<div class="critic-review-image">
+			<img src="<%= event.movie.img_url %>">
+		</div>
+		<div class="critic-review-content">
+			<h1><%= link_to event.movie.name, "/reviews/" + event.reviews.find_by(critic_id: @critic.id).id.to_s %></h1>
+		</div>
+	</div>
 <% end %>

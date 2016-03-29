@@ -1,30 +1,37 @@
 class MoviesController < ApplicationController
 
+
 	def index
 		@movies = Movie.all
 	end
 
 	def new
 		@movie = Movie.new
+    # @event = Event.new
 	end
 
-	def create
-		@movie = Movie.new(movie_params)
-		if @movie.save
-			flash[:success] = "Movie has been successfully saved."
-			redirect_to @movie
-		else
-			flash[:danger] = "Something went wrong."
-			render 'new'
-		end
-	end
+  def create
+    @movie = Movie.new(movie_params)
+    @movie.creator = current_user
+    if @movie.save
+      redirect_to @movie
+    else
+      render "movies/form"
+    end
+  end
 
 	def show
 		@movie = Movie.find(params[:id])
+    # @event = Event.find(params[:id])
 	end
 
-	def update
-	end
+  def edit
+    # @event = Event.find(params[:id])
+  end
+
+  def update
+
+  end
 
 	def destroy
 		@movie.find(params[:id]).destroy
@@ -37,3 +44,4 @@ class MoviesController < ApplicationController
 	end
 
 end
+
