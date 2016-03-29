@@ -57,11 +57,11 @@ nav ul {
 	list-style-type: none;
 }
 
-li {
+nav ul li {
 	display: inline;
 }
 
-li a {
+nav ul li a {
 	color: white;
 	text-decoration: none;
 }
@@ -211,7 +211,7 @@ li a {
 	width: 10%;
 	height: 100%;
 	float: right;
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZJREFUeNpi2r9//38gYGAEESAAEGAAasgJOgzOKCoAAAAASUVORK5CYII=); 
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZJREFUeNpi2r9//38gYGAEESAAEGAAasgJOgzOKCoAAAAASUVORK5CYII=);
 }
 
 .slide-left {

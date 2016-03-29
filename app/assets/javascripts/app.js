@@ -43,4 +43,5 @@ $(document).ready(function() {
 			$(this).addClass("slide-left", 500, "linear");
 		};
 	});
+
 });

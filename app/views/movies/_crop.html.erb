@@ -1,0 +1,32 @@
+<h1>Crop your image</h1>
+<div class="movie-image" id = "crop-div">
+  <img src="http://i.kinja-img.com/gawker-media/image/upload/vbs6n6bbweurm1ukmhd4.jpg" id = "jcrop_target" style="width: 500px; height:100%"></div>
+  <div class="preview" id = "preview-div">
+  <img src="http://i.kinja-img.com/gawker-media/image/upload/vbs6n6bbweurm1ukmhd4.jpg" id = "preview"></div>
+<script type="text/javascript">
+$(function(){
+
+  $('#jcrop_target').Jcrop({
+    onSelect: showPreview,
+    onChange: showPreview,
+    aspectRatio: 1
+  });
+
+ function showPreview(coords)
+{
+  var rx = 100 / coords.w;
+  var ry = 100 / coords.h;
+
+  $('#preview').css({
+    width: Math.round(rx * 100) + 'px',
+    height: Math.round(ry * 100) + 'px',
+    marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+    marginTop: '-' + Math.round(ry * coords.y) + 'px'
+  });
+}
+
+
+
+});
+</script>
+
