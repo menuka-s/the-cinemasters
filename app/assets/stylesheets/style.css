@@ -111,6 +111,27 @@ form input[type=submit]:hover {
 	transition: all 0.5s linear;
 }
 
+input[type=submit] {
+	background: #f6f6f6;
+	border: none;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	width: 250px;
+	display: block;
+	outline-width: 0;
+	background-color: none;
+	color: black;
+	transition: all 0.5s linear;
+}
+
+input[type=submit]:hover {
+	background-color: black;
+	color: white;
+	transition: all 0.5s linear;
+}
+
 .main {
 	width: 80%;
 	height: 60%;
@@ -367,5 +388,44 @@ form input[type=submit]:hover {
 	filter: none;
 	filter: grayscale(0);
 	-webkit-filter: grayscale(0);
+	transition: all 0.5s;
+}
+
+.show-movie-container {
+	margin-top: 5em;
+	margin-bottom: 5em;
+	width: 100%;
+}
+
+.movie-image {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	width: 100%;
+	height: 400px;
+	background-size: cover;
+	margin-bottom: 1em;
+}
+
+.show-movie-container img {
+	width: 100%;
+	height: 100%;
+}
+
+.event-container {
+	display: block;
+	width: 80%;
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	margin: 2em auto;
+}
+
+.black-link {
+	color: black;
+	text-decoration: none;
+	transition: all 0.5s;
+}
+
+.black-link:hover {
+	color: gray;
 	transition: all 0.5s;
 }
