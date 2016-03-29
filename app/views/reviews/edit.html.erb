@@ -1,0 +1,34 @@
+Edit your review of
+
+<%= form_for @review do |f| %>
+
+  <% if @review.errors.any? %>
+    <%= @review.errors.full_messages.each do |error| %>
+      <%= error %>
+    <% end %>
+  <% end %>
+
+  <% labels = ["Rubric 1","Rubric 2","Rubric 3","Rubric 4","Rubric 5","Rubric 6","Rubric 7","Rubric 8","Rubric 9"] %>
+
+  <% 9.times do |x| %>
+    <%= labels[x] %>:
+    <% 10.times do |y| %>
+      <% if @review.ratings.split(',')[x] == (y+1).to_s %>
+        <% checked="checked" %>
+      <% else %>
+        <% checked="" %>
+      <% end %>
+      <input type="radio" name="rubric<%=x+1%>" value="<%=y+1%>" <%= checked %> >
+      <span style="color: #<%= (12-y).to_s(16) %><%= (y+4).to_s(16) %>6"><%=y+1%></span>
+    <% end %>
+    <br>
+  <% end %>
+
+
+  <%= f.label :content %><br>
+  <%= f.text_area :content %>
+<br>
+
+  <%= f.submit %>
+
+<% end %>

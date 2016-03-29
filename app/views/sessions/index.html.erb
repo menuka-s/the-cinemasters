@@ -1,5 +1,10 @@
-<!-- <a href='/login'>Login</a>
-<a href='/logout'>Logout</a> -->
+
+<a href='/login'>Login</a>
+<a href='/logout'>Logout</a>
+<% if current_user %>
+  <%= link_to "Home", current_user %>
+<% end %>
+
 <div id="cover"></div>
   <div class="splash">
   	<h1>WELCOME</h1>
