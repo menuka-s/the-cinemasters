@@ -2,10 +2,16 @@
 
 
 
+<%= image_tag @movie.movie_image.url(:large), :id => "cropbox" %>
+
+<h4>Preview:</h4>
+<div style="width:100px; height:100px; overflow:hidden">
+  <%= image_tag @movie.movie_image.url(:large), :id => "preview" %>
+</div>
 <div>
 <% form_for @movie do |f| %>
-  <%= f.cropbox :movie_image, :width => 500 %>
-  <%= f.crop_preview :movie_image, :width => 150 %>
+  <%= f.cropbox :avatar %>
+  <%= f.crop_preview :avatar %>
   <%= f.submit 'Save' %>
 <% end %>
 </div>

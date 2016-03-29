@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require jquery.Jcrop
+//= require papercrop
 //= require_tree .

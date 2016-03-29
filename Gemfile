@@ -32,6 +32,8 @@ gem 'bcrypt', '~> 3.1.7'
 # USE PAPERCLIP TO PERSIST IMAGES
 gem 'paperclip', '~> 4.2'
 
+gem 'papercrop'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

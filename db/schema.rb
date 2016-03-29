@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160329162449) do
+ActiveRecord::Schema.define(version: 20160329204602) do
 
   create_table "critics", force: :cascade do |t|
     t.string   "username"
@@ -41,8 +41,12 @@ ActiveRecord::Schema.define(version: 20160329162449) do
     t.string   "name"
     t.string   "imdb_url"
     t.string   "img_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "movie_image_file_name"
+    t.string   "movie_image_content_type"
+    t.integer  "movie_image_file_size"
+    t.datetime "movie_image_updated_at"
   end
 
   create_table "reviews", force: :cascade do |t|

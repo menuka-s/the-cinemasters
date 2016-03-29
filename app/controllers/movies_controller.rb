@@ -15,7 +15,7 @@ class MoviesController < ApplicationController
     if @movie.save
       redirect_to @movie
     else
-      render "movies/form"
+      render "movies/_form"
     end
   end
 
@@ -25,11 +25,16 @@ class MoviesController < ApplicationController
 	end
 
   def edit
-    # @event = Event.find(params[:id])
+    @movie = Movie.find(params[:id])
   end
 
   def update
-
+    @movie = Movie.find(params[:id])
+    if @movie.update_attributes(params[:movie])
+        redirect_to @movie
+    else
+      render "movies/_form"
+    end
   end
 
 	def destroy
@@ -39,7 +44,7 @@ class MoviesController < ApplicationController
 	private
 
 	def movie_params
-		params.require(:movie).permit(:name, :img_url, :imdb_url)
+		params.require(:movie).permit(:name, :movie_image, :imdb_url)
 	end
 
 end
