@@ -9,14 +9,10 @@
 		 	</div>
 		<% end %>
 
-		<br><br>
-
 		<h3> Events You Created: </h3>
 		<% @critic.created_events.each do |event| %>
 			<%= link_to event.name, event %>
 		<% end %>
+		</div>
+		<div id="critic-event-tab"></div>
 	</div>
-
-	<div id="critic-event-tab">
-	</div>
-</div>
