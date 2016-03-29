@@ -6,15 +6,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Movie.create(name: "Spotlight", imdb_url: "http://www.imdb.com/title/tt1895587/", img_url: "http://thetipsyverse.com/wp-content/uploads/2015/11/Spotlight-Movie-Review-1.jpg")
+Movie.create(name: "Spotlight", imdb_url: "http://www.imdb.com/title/tt1895587/", img_url: "http://thetipsyverse.com/wp-content/uploads/2015/11/Spotlight-Movie-Review-1.jpg", movie_image: File.new("#{Rails.root}/public/spotlight.jpg"))
 
-Movie.create(name: "Birdman or (The Unexpected Virtue of Ignorance)", imdb_url: "http://www.imdb.com/title/tt2562232/", img_url: "http://www.wired.com/wp-content/uploads/2014/10/Birdman.jpg")
+Movie.create(name: "Birdman or (The Unexpected Virtue of Ignorance)", imdb_url: "http://www.imdb.com/title/tt2562232/", img_url: "http://www.wired.com/wp-content/uploads/2014/10/Birdman.jpg",movie_image: File.new("#{Rails.root}/public/birdman.jpg"))
 
-Movie.create(name: "12 Years a Slave", imdb_url: "http://www.imdb.com/title/tt2024544/", img_url: "http://ia.media-imdb.com/images/M/MV5BMjExMTEzODkyN15BMl5BanBnXkFtZTcwNTU4NTc4OQ@@._V1_SX640_SY720_.jpg")
+Movie.create(name: "12 Years a Slave", imdb_url: "http://www.imdb.com/title/tt2024544/", img_url: "http://ia.media-imdb.com/images/M/MV5BMjExMTEzODkyN15BMl5BanBnXkFtZTcwNTU4NTc4OQ@@._V1_SX640_SY720_.jpg",movie_image: File.new("#{Rails.root}/public/12yearsaslave.jpg"))
 
-Movie.create(name: "Argo", imdb_url: "http://www.imdb.com/title/tt1024648/", img_url: "http://www.revelationsradionews.com/wp-content/uploads/2013/02/01_argo_ipad.jpg")
+Movie.create(name: "Argo", imdb_url: "http://www.imdb.com/title/tt1024648/", img_url: "http://www.revelationsradionews.com/wp-content/uploads/2013/02/01_argo_ipad.jpg",movie_image: File.new("#{Rails.root}/public/argo.jpg"))
 
-Movie.create(name: "The Artist", imdb_url: "http://www.imdb.com/title/tt1655442/", img_url: "https://generationfilm.files.wordpress.com/2011/11/artist_primary.jpg")
+Movie.create(name: "The Artist", imdb_url: "http://www.imdb.com/title/tt1655442/", img_url: "https://generationfilm.files.wordpress.com/2011/11/artist_primary.jpg",movie_image: File.new("#{Rails.root}/public/theartist.jpg"))
 
 Critic.create(username: "Garfield Pincenez", password: "password", email: "radical_saint@yahoo.net", profile_image: File.new("#{Rails.root}/public/profile.jpeg"))
 
