@@ -1,4 +1,8 @@
-Edit your review of
+Create your review of <%= @review.movie.name %>
+<style>
+#review_content {width: 400px; height: 600px;}
+body {text-align: left;}
+</style>
 
 <%= form_for @review do |f| %>
 
@@ -8,21 +12,23 @@ Edit your review of
     <% end %>
   <% end %>
 
-  <% labels = ["Rubric 1","Rubric 2","Rubric 3","Rubric 4","Rubric 5","Rubric 6","Rubric 7","Rubric 8","Rubric 9"] %>
+ <table>
 
   <% 9.times do |x| %>
-    <%= labels[x] %>:
+    <tr>
+    <td><%= @labels[x] %></td>
+    <td>
     <% 10.times do |y| %>
-      <input type="radio" name="rubric<%=y+1%>" value="<%=y+1%>">
+      <input type="radio" name="review[rubric<%=x+1%>]" value="<%=y+1%>">
       <span style="color: #<%= (12-y).to_s(16) %><%= (y+4).to_s(16) %>6"><%=y+1%></span>
     <% end %>
-    <br>
+    </td></tr>
   <% end %>
-
-
-  <%= f.label :content %>
+</table>
+<br><br>
+  <%= f.label :content %><br>
   <%= f.text_area :content %>
-<br>
+<br><br>
 
   <%= f.submit %>
 
