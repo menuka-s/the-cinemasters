@@ -14,7 +14,7 @@ Edit your review of
     <%= labels[x] %>:
     <% 10.times do |y| %>
       <input type="radio" name="rubric<%=y+1%>" value="<%=y+1%>">
-      <span style="color: #<%= 9-y %><%= y + 0 %>6"><%=y+1%></span>
+      <span style="color: #<%= (12-y).to_s(16) %><%= (y+4).to_s(16) %>6"><%=y+1%></span>
     <% end %>
     <br>
   <% end %>
