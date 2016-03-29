@@ -22,7 +22,7 @@
 						<h1 class="black-link"><%= link_to review.critic.username, "/critics/" + review.critic.id.to_s %></h1>
 						<p><%=truncate( review.content, length: 90 ) %></p>
 						<input type="submit" value="READ REVIEW" 
-    onclick='window.location="/reviews/<%= review.id %>";'' />  
+    onclick='window.location="/reviews/<%= review.id %>";' />  
 					</div>
 				</div>
 			<% end %>
