@@ -1,5 +1,11 @@
 class ReviewsController < ApplicationController
 
+  #ajax handler to make a review
+  def invite_handler
+    puts "\n\n\n\n\n\n\n#{params}\n\n\n\n\n"
+    redriect_to '/events/6/invite'
+  end
+
   def index
   end
 
@@ -7,32 +13,38 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
   end
 
-  def new
-    ### This should just create a new review with movie_id and critic_id - no form needed
-    ### content and rating should be set to "" **not nil!
-    @labels = ["Rubric 1","Rubric 2","Rubric 3","Rubric 4","Rubric 5","Rubric 6","Rubric 7","Rubric 8","Rubric 9"]
-    @review = Review.new(event_id: params[:event_id])
+  ## This creates a blank review ( = invite )
+  def create
+      #send form with list of members
+    @event = Event.find(params[:event_id])
+    @critics = Critic.all
+    if @event.creator_id != session[:user_id]
+      render 'reviews/access_denied'
+    else
+      render 'reviews/_invite'
+    end
   end
+
 
   def edit
     @labels = ["Rubric 1","Rubric 2","Rubric 3","Rubric 4","Rubric 5","Rubric 6","Rubric 7","Rubric 8","Rubric 9"]
     @review = Review.find(params[:id])
   end
 
-  def create
+#   def create
 
-### if date > publish_date, render toolate
+# ### if date > publish_date, render toolate
 
-    rubrics_string = rubrics_to_string(params[:review])
+#     rubrics_string = rubrics_to_string(params[:review])
 
-    @review = Review.new({content: params[:review][:content], ratings: rubrics_string})
-    @review.critic = session[:user_id]
-    if @review.save
-      redirect_to @review
-    else
-      render "review/new"
-    end
-  end
+#     @review = Review.new({content: params[:review][:content], ratings: rubrics_string})
+#     @review.critic = session[:user_id]
+#     if @review.save
+#       redirect_to @review
+#     else
+#       render "review/new"
+#     end
+#   end
 
   def update
     rubrics_string = rubrics_to_string(params[:review])

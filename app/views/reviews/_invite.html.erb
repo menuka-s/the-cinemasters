@@ -1,0 +1,33 @@
+<h2>You created this event. You may select who can submit reviews:
+</h2>
+<br>
+<span style="height: 30px; width: 30px;background-color: #CFC"> Already invited, click to uninvite</span>
+<br>
+<span style="height: 30px; width: 30px;background-color: #CCC"> Not yet invited, click to invite</span>
+<br><br><br>
+
+<% p @event %>
+
+<style>button {display:block;}</style>
+
+<div style="width: 200px; display:block; margin: auto;" id="invite_buttons">
+<% @critics.each do |critic| %>
+	<% if is_invited?(critic,@event) %>
+		<button style = "background-color: #CFC;" 
+				id = "critic<%= critic.id %>" 
+				class = "invite_button" 
+				value = "u,<%=@event.id%>,<%=critic.id %>" >
+			<%=critic.username %>
+		</button>
+	<% else %>
+		<button style = "background-color: #CCC;" 
+				id = "critic<%= critic.id %>" 
+				class = "invite_button" 
+				value = "i,<%=@event.id%>,<%=critic.id %>" >
+			<%=critic.username %>
+		</button>
+	<% end %>
+	<br>
+<% end %>
+
+</div>

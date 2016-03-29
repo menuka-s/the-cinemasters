@@ -20,3 +20,7 @@ ul {text-align: left;}
   <% end %>
 </ul>
 
+<% if @event.creator_id = session[:user_id] %>
+  <a href="/events/<%= @event.id %>/invite">Event Admin: Select Reviewers</a>
+<% end %>
+

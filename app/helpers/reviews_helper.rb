@@ -8,7 +8,7 @@ module ReviewsHelper
   #   false
   # end
 
-    def review_has_data(review)
+  def review_has_data(review)
     review = Review.find(review.id)
     if review && ( review.content != "" || review.ratings != "")
       return true
@@ -16,4 +16,8 @@ module ReviewsHelper
     false
   end
 
+  def is_invited?(critic, event)
+    critic.joined_events.include?(event)
+  end
+  
 end
