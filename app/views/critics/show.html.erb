@@ -1,5 +1,6 @@
 <div class="main">
 	<h1><%= @critic.username.upcase %> REVIEWS</h1>
+	<img class="profile-image" src="<%= @critic.profile_image %>">
 
 	<% if !!current_user %>
 	  <%= render 'critics/private' %>

@@ -5,19 +5,23 @@
       <%= error %>
     <% end %>
   <% end %>
-<br>
+
   <%= f.label :username %>
   <%= f.text_field :username %>
-<br>
+
   <%= f.label :email %>
   <%= f.text_field :email %>
-<br>
+
   <%= f.label :password %>
-  <%= f.text_field :password %>
-<br>
+  <%= f.password_field :password %>
+
   <%= f.label :password_confirmation %>
-  <%= f.text_field :password_confirmation %>
-<br>
+  <%= f.password_field :password_confirmation %>
+
+
+  <%- f.label :profile_image %>
+  <%= f.file_field :profile_image %>
+  
   <%= f.submit %>
 
 <% end %>
