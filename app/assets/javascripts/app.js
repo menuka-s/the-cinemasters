@@ -5,7 +5,7 @@ $(document).ready(function() {
   }, 1500 );
 
 	$("#left").hover(function() {
-		$("#login").animate({
+		$(".hidden-button").animate({
 			opacity: 1
 		}, 1500);
 	})
@@ -14,6 +14,10 @@ $(document).ready(function() {
 	  $(".tagline").fadeIn(2000);
 	  $(".review").fadeIn(3000);
 	});
+
+	//WITHOUT COVER NEED TO FADEIN THESE TWO
+	$(".tagline").fadeIn(2000);
+  $(".review").fadeIn(3000);
 
 	$("#nav-button-hover").hover(function() {
     $("nav").slideDown(1000, function() {
@@ -25,18 +29,18 @@ $(document).ready(function() {
 	$("#nav-button-click").on('click', function() {
 		$("nav").slideUp(1000);
 		$("#nav-button-click").fadeOut(1000);
-		$("#login").animate({
+		$(".hidden-button").animate({
 			opacity: 0
 		}, 0);
 	});
 
 	$("#critic-event").on('click', function() {
 		if($("#critic-event").hasClass("slide-left")) {
-			$(this).addClass("slide-right", 100, "linear");
+			$(this).addClass("slide-right", 500, "linear");
 			$(this).removeClass("slide-left");
 		} else {
 			$(this).removeClass("slide-right");
-			$(this).addClass("slide-left", 100, "linear");
+			$(this).addClass("slide-left", 500, "linear");
 		};
 	});
 });
