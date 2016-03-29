@@ -5,6 +5,7 @@ class Critic < ActiveRecord::Base
   has_many :reviews
   has_many :joined_events, through: :reviews, source: :event
   has_many :reviewed_movies, through: :reviews, source: :movie
+  has_many :invitations
 
   has_secure_password
   has_attached_file :profile_image, styles: { :thumb => "100x100", :medium => "640x640", :large => "960x960" }
