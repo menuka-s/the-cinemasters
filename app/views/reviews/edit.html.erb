@@ -11,10 +11,13 @@ Edit your review of <%= @review.movie.name %>
 <style>
 #review_content {width: 700px; height: 400px;}
 body {text-align: left;}
+input {display: inline-block;}
+span {display: inline-block;}
+form input {display: inline-block;}
 </style>
 
   <table>
-    <% 9.times do |x| %>
+    <% 5.times do |x| %>
       <tr>
       <td><%= @labels[x] %></td>
       <td>
@@ -29,6 +32,10 @@ body {text-align: left;}
       <% end %>
       </td></tr>
     <% end %>
+    <tr>
+      <td>Artistic</td>
+      <td><input type="text" size=2 name="rubric6" placeholder=" / 50"></td>
+    </tr>
   </table>
   <br><br>
 
