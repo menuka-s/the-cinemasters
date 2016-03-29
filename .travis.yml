@@ -1,7 +1,7 @@
 language: ruby
 sudo: required
 before_script:
-  -"rake db:migrate RAILS_ENV=test"
+  - "rake db:migrate RAILS_ENV=test"
 
 rvm:
  - "2.0.0"
