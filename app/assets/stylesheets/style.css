@@ -58,13 +58,19 @@ nav ul {
 	list-style-type: none;
 }
 
-li {
+nav ul li {
 	display: inline;
 }
 
-li a {
+nav ul li a {
 	color: white;
 	text-decoration: none;
+	transition: all 0.5s linear;
+}
+
+nav ul li a:hover {
+	color: gray;
+	transition: all 0.5s linear;
 }
 
 .login {
@@ -124,6 +130,17 @@ form input:focus {
 /*	overflow: hidden;*/
 }
 
+.review a {
+	color: black;
+	text-decoration: none;
+	transition: all 0.5s linear;
+}
+
+.review a:hover {
+	color: gray;
+	transition: all 0.5s linear;
+}
+
 .review-image {
 	display: inline-block;
 	float: left;
@@ -179,10 +196,23 @@ form input:focus {
 	background-color: #000;
 }
 
+.review-2-image h1 a {
+	padding: 0.5em;
+	font-size: 24px;
+	color: white;
+	text-decoration: none;
+	transition: all 0.5s linear;
+}
+
+.review-2-image h1 a:hover {
+	color: gray;
+	transition: all 0.5s linear;
+}
+
 .critic-review {
 	display: block;
 	width: 80%;
-	height: 150px;
+	height: 200px;
 	border-top: 1px solid gray;
 	border-bottom: 1px solid gray;
 	margin: 2em auto;
@@ -192,26 +222,33 @@ form input:focus {
 .critic-review a {
 	color: black;
 	text-decoration: none;
+	transition: all 0.5s linear;
+}
+
+.critic-review a:hover {
+	color: gray;
+	transition: all 0.5s linear;
 }
 
 .critic-review-image {
+	float: left;
 	display: inline-block;
-	float: left;
 	width: 30%;
-}
-
-.critic-review-image img {
-	float: left;
-	height: 150px;
-	width: 100%;
-	-webkit-filter: grayscale(100%);
-	filter: grayscale(100%);
+	height: 100%;
+	color: white;
+	text-align: center
+	filter: gray;
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+	background-size: cover;
 }
 
 .critic-review-content {
-	text-align: left;
+	margin-left: 2em;
+	font-size: 16px;
 	display: inline-block;
-	float: right;
+	text-align: left;
+	float: left;
 	width: 60%;
 }
 
@@ -238,6 +275,17 @@ form input:focus {
 	height: 100%;
 	float: right;
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZJREFUeNpi2r9//38gYGAEESAAEGAAasgJOgzOKCoAAAAASUVORK5CYII=); 
+}
+
+#critic-event a {
+	color: black;
+	text-decoration: none;
+	transition: all 0.5s linear;
+}
+
+#critic-event a:hover {
+	color: gray;
+	transition: all 0.5s linear;
 }
 
 .slide-left {
