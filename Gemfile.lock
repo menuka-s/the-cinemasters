@@ -91,7 +91,6 @@ GEM
     mime-types-data (3.2016.0221)
     mimemagic (0.3.0)
     mini_magick (4.3.6)
-    mimemagic (= 0.3.0)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
@@ -168,9 +167,6 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    shareable (1.1.4)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
     slop (3.6.0)
     spring (1.6.4)
     sprockets (3.5.2)
@@ -217,7 +213,6 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
-  shareable
   spring
   sqlite3
   turbolinks

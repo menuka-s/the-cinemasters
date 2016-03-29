@@ -8,7 +8,6 @@ class EventsController < ApplicationController
   end
 
   def new
-    @movie = Movie.new
     @event = Event.new
   end
 
@@ -42,7 +41,7 @@ class EventsController < ApplicationController
 
   private
     def event_params
-      params.require(:event).permit(:pub_date, :name, :movie)
+      params.require(:event).permit(:pub_date, :name, :movie_id)
     end
 
 end

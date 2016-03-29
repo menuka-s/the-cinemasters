@@ -13,7 +13,7 @@ class MoviesController < ApplicationController
   def create
     @movie = Movie.new(movie_params)
     if @movie.save
-      redirect_to @movie
+      redirect_to '/events/new'
     else
       render "movies/_form"
     end
@@ -31,7 +31,7 @@ class MoviesController < ApplicationController
   def update
     @movie = Movie.find(params[:id])
     if @movie.update_attributes(params[:movie])
-        redirect_to @movie
+        redirect_to '/events/new'
     else
       render "movies/_form"
     end
