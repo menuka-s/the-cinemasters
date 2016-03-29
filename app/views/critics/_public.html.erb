@@ -1,4 +1,6 @@
+<h1 class="tagline"><%= @critic.username.upcase %> REVIEWS</h1>
 <% @critic.joined_events.each do |event| %>
+
   <div class="critic-review">
 		<div class="critic-review-image" style="background-image: url(<%= event.movie.img_url %>)"></div>
 		<div class="critic-review-content">

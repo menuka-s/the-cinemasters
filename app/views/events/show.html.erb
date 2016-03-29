@@ -4,7 +4,7 @@ show.html.erb
 
 The following reviews are for this event:<br><br>
 <style>
-li a {color: #00F;}
+li a {color: #00F; display:block;}
 ul {text-align: left;}
 </style>
 <ul>
@@ -19,4 +19,8 @@ ul {text-align: left;}
         </li>
   <% end %>
 </ul>
+
+<% if @event.creator_id = session[:user_id] %>
+  <a href="/events/<%= @event.id %>/invite">Event Admin: Select Reviewers</a>
+<% end %>
 
