@@ -18,7 +18,7 @@ This is reviews/show.html.erb
 		<%= @labels[index] %> is <%= val %> / 50 <br>
 	<% end %>
 <% end %>
-<h3>Overall score: <%= @total %></h3>
+<h3><%if @total%><div id = "total-score" style = "background-color: rgb(<%=(255- @total *2.5).to_i%>,<%= (255-@total *2.5).to_i%>,<%=(255- @total *2.5).to_i%>);"><%= @total %></div></h3><%end%>
 <br><br>
 <p><%= @review.content %></p>
 
