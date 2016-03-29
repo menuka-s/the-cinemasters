@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resources :critics
-  resources :events
-
+  resources :events, except: :index
+  resources :movies
   get '/reviews/new/:event_id' => 'reviews#new'
-
   resources :reviews
+
 
 
   get '/login' => 'sessions#new'
