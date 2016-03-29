@@ -24,7 +24,9 @@ class ReviewsController < ApplicationController
   end
 
   def show
+    @labels = ["Writing","Acting","Directing","Spec Effects","Score","Artistic"]
     @review = Review.find(params[:id])
+    @total = @review.ratings.split(',').map{|x| x.to_i}.reduce(:+)
   end
 
   ## This creates a blank review ( = invite )
@@ -41,7 +43,7 @@ class ReviewsController < ApplicationController
 
 
   def edit
-    @labels = ["Rubric 1","Rubric 2","Rubric 3","Rubric 4","Rubric 5","Rubric 6","Rubric 7","Rubric 8","Rubric 9"]
+    @labels = ["Writing","Acting","Directing","Spec Effects","Score","Artistic"]
     @review = Review.find(params[:id])
   end
 
@@ -78,8 +80,7 @@ class ReviewsController < ApplicationController
 
   def rubrics_to_string(input)
     string = ""
-    9.times do |i|
-      puts "\n\n\n\n\n\n#{input}\n\n\n\n\n\n"
+    6.times do |i|
       input["rubric" + (i+1).to_s] ||= "0"
       string += input["rubric" + (i+1).to_s] + ","
     end
