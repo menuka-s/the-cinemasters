@@ -23,7 +23,8 @@ body {
 }
 
 #center {
-	float: middle;
+	margin-left: 27.5em;
+	float: left;
 	text-align: center;
 }
 
@@ -64,6 +65,31 @@ li {
 li a {
 	color: white;
 	text-decoration: none;
+}
+
+.login {
+	width: 80%;
+	margin: 5em auto;
+}
+
+form {
+	margin: 0 auto; 
+	width:250px;
+	text-align: center;
+}
+
+form input {
+	background: #f6f6f6;
+	border: none;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	margin-top: 1em;
+	width: 250px;
+	display: block;
+}
+
+form input:focus {
+	outline-width: 0;
 }
 
 .main {
