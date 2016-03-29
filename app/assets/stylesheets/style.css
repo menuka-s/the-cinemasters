@@ -210,8 +210,8 @@ input[type=submit]:hover {
 
 .review-2 {
 	display: inline-block;
-	width: 20%;
-	height: 250px;
+	width: 30%;
+	height: 350px;
 	border-top: 1px solid gray;
 	border-bottom: 1px solid gray;
 	margin: 1em;
@@ -392,8 +392,6 @@ input[type=submit]:hover {
 	transition: all 0.5s;
 }
 
-<<<<<<< HEAD
-=======
 .show-movie-container {
 	margin-top: 5em;
 	margin-bottom: 5em;
@@ -431,5 +429,118 @@ input[type=submit]:hover {
 .black-link:hover {
 	color: gray;
 	transition: all 0.5s;
+}
+
+
+.rating-criterias {
+	display: block;
+	width: 100%;
+}
+
+.rating-criterias li {
+	list-style-type: none;
+	margin: 0.3em;
+}
+
+.rating-criterias {
+	display: block;
+	color: white;
+	text-align: left;
+}
+
+.rating-criterias p {
+	margin-left: 1em;
+}
+
+.rating-content {
+	margin-top: 3em;
+}
+
+.social {
+	font-size: 60px;
+}
+
+.social a {
+	color: black;
+	text-decoration: none;
+}
+
+.review-images {
+	display: block;
+}
+
+.review-images img {
+	display: inline;
+	border-radius: 50%;
+	border: 1px solid black;
+	width: 100px;
+	height: 100px;
+	-webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: all 0.5s;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.review-images img:hover {
+	-webkit-filter: grayscale(0);
+  filter: grayscale(0);
+  transition: all 0.5s;
+}
+
+.event-review {
+	float: left;
+	display: inline-block;
+	width: 30%;
+	height: 250px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	vertical-align:top;
+	margin: 0.2em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	-webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: all 0.5s;
+  background-size: cover;
+  color: white;
+}
+
+.event-review:hover {
+	-webkit-filter: grayscale(0);
+  filter: grayscale(0);
+  transition: all 0.5s;
+}
+
+.event-review a {
+	color: white;
+	text-decoration: none;
+	transition: all 0.5s;
+}
+
+.event-review a:hover {
+	color: gray;
+	transition: all 0.5s;
+}
+
+.event-review-container {
+	display: block;
+	width: 100%;
+	min-height: 45em;
+}
+
+.event-review-button {
+	width: 25%;
+	margin: 0 auto;
+	display: block;
+}
+
+.gray {
+	color: gray;
+}
+
+.border {
+	width: 100%;
+	border-bottom: 1px gray solid;
 }
 
