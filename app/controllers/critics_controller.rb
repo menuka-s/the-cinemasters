@@ -32,7 +32,7 @@ class CriticsController < ApplicationController
 
   private
     def critic_params
-      params.require(:critic).permit(:email, :password, :password_confirmation, :username) #add poster back here later
+      params.require(:critic).permit(:email, :password, :password_confirmation, :username, :profile_image) #add poster back here later
     end
 
 end

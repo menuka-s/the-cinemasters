@@ -1,15 +1,22 @@
 <div id="critic-event" class="slide-left">
 	<div id="critic-event-content">
-		<h2>Welcome <%= @critic.username %> </h2>
-		<p>Your username: <%= @critic.username %><p>
-		<p>Your email address: <%= @critic.email %><p>
-		<h1>You have been invited to pariticipate in</h1>
+		<h2>WELCOME <%= @critic.username.upcase %> </h2>
+		<h3>YOU'RE INVITED TO THE FOLLOWING EVENTS</h3>
+
 		<% @critic.joined_events.each do |event| %>
 		  <div class="event">
 			  <p><%= link_to event.name, event %></p>
 		 	</div>
 		<% end %>
+
+		<br><br>
+
+		<h3> Events You Created: </h3>
+		<% @critic.created_events.each do |event| %>
+			<%= link_to event.name, event %>
+		<% end %>
 	</div>
 
-	<div id="critic-event-tab"></div>
+	<div id="critic-event-tab">
+	</div>
 </div>

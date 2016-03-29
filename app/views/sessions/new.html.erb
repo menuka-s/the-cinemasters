@@ -1,5 +1,5 @@
 <div class="login">
-  <h1>Login</h1>
+  <h1>LOGIN</h1>
 
   <% if @errors %>
     <% @errors.each do |error| %>
@@ -8,8 +8,8 @@
   <% end %>
 
   <%= form_tag '/login' do %>
-    Email: <%= text_field_tag :email  %>
-    Password: <%= password_field_tag :password %>
-    <%= submit_tag "Login" %>
+    <%= text_field_tag :email, nil, placeholder: 'EMAIL'  %>
+    <%= password_field_tag :password, nil, placeholder: 'PASSWORD' %>
+    <%= submit_tag "SUBMIT" %>
   <% end %>
 </div>
