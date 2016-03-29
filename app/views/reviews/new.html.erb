@@ -13,7 +13,8 @@ Edit your review of
   <% 9.times do |x| %>
     <%= labels[x] %>:
     <% 10.times do |y| %>
-      <input type="radio" name="rubric<%=y+1%>" value="<%=y+1%>"> <%=y+1%>
+      <input type="radio" name="rubric<%=y+1%>" value="<%=y+1%>">
+      <span style="color: #<%= 9-y %><%= y + 0 %>6"><%=y+1%></span>
     <% end %>
     <br>
   <% end %>
