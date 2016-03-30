@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   get '/critics/partial' => 'critics#partial'
   resources :critics, except: [:new]
+
   post '/invitations/new' => 'invitations#new'
   delete '/invitations/:id' => 'invitations#delete'
   get '/invitations/:id' => 'invitations#redeem'

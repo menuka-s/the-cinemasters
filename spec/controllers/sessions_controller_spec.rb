@@ -47,7 +47,16 @@ describe SessionsController do
 
 			end
 		end
+	end
 
+	describe "POST #destroy" do
+		it "sets sessions[:user_id] to nil" do
+
+		end
+
+		it "redirects to the root page" do 
+
+		end
 	end
 
 end

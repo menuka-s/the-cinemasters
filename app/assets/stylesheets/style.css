@@ -58,6 +58,7 @@ nav ul {
 
 nav ul li {
 	display: inline;
+	margin-left: 0.5em;
 }
 
 nav ul li a {
@@ -151,6 +152,7 @@ input[type=submit]:hover {
 	text-align: center;
 	border-top: 1px solid gray;
 	border-bottom: 1px solid gray;
+	clear: both;
 }
 
 .tagline {
@@ -800,3 +802,4 @@ button:hover {
 	color: white;
 	transition: all 0.5s linear;
 }
+
