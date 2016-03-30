@@ -144,6 +144,7 @@ input[type=submit]:hover {
 }
 
 .main {
+	position: relative;
 	width: 80%;
 	height: 100%;
 	margin: 5em auto;
@@ -751,3 +752,19 @@ button:hover {
 	transition: all 0.5s;
 }
 
+.scorecard {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 32px;
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+
+.review-paragraph {
+	margin-bottom: 3em;
+}
