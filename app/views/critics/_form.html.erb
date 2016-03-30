@@ -7,7 +7,7 @@
       <% end %>
     <% end %>
 
-    <h1>NEW CRITIC</h1>
+    <h1>ELITE ACCESS GRANTED</h1>
 
     <%= f.text_field :username, :placeholder => 'USERNAME' %>
 
@@ -15,10 +15,11 @@
 
     <%= f.password_field :password, :placeholder => 'PASSWORD' %>
 
-    <%= f.password_field :password_confirmation, :placeholder => 'PASSWORD' %>
+    <%= f.password_field :password_confirmation, :placeholder => 'CONFIRM PASSWORD' %>
 
 
     <%- f.label :profile_image %>
+    <p>UPLOAD PROFILE IMAGE</p>
     <%= f.file_field :profile_image %>
 
     <%= f.submit %>

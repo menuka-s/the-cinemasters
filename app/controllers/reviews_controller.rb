@@ -31,7 +31,7 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @labels = ["Writing","Acting","Directing","Spec Effects","Score","Artistic"]
+    @labels = ["Writing","Acting","Directing","Special Effects","Score","Artistic"]
     @review = Review.find(params[:id])
     @total = @review.ratings.split(',').map{|x| x.to_i}.reduce(:+)
   end
@@ -50,7 +50,7 @@ class ReviewsController < ApplicationController
 
 
   def edit
-    @labels = ["Writing","Acting","Directing","Spec Effects","Score","Artistic"]
+    @labels = ["Writing","Acting","Directing","Special Effects","Score","Artistic"]
     @review = Review.find(params[:id])
     if @review.draft != ""
       @review.content = @review.draft

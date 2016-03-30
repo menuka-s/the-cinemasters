@@ -33,12 +33,12 @@
 	<div class="rating-criterias">
 		<% @review.ratings.split(',').each_with_index do |val,index| %>
 			<%if index < 5 %>
-			<% width_val = 10 + (val.to_i * 10) %>
+			<% width_val = 10 + (val.to_i * 9) %>
 			<div class="bar" style="width: <%= width_val %>%;height: 20px">
 				<p><%= @labels[index].upcase %> <span class="review_scores"><%= val %> / 10</span></p>
 			</div>
 			<% else %>
-			<div class="bar" style="width: <%= val.to_i * 2 %>%;height: 20px">
+			<div class="bar" style="width: <%= ((val.to_i * 2) + 10) %>%;height: 20px">
 				<p><%= @labels[index].upcase %> <span class="review_scores"><%= val %> / 50</span></p>
 			</div>
 			<% end %>
@@ -49,7 +49,7 @@
 		<div class="review-paragraph">
 			<%= simple_format(@review.content.gsub(/\n/, '<br>'))%>
 		</div>
-		<div class="scorecard"><%=@total%></div>
+		<div class="scorecard" style="background-color: rgb(<%=255-(@total * 2.5).to_i%>,<%=255-(@total * 2.5).to_i%>,<%=255-(@total * 2.5).to_i%>)"><%=@total%></div>
 	</div>
 
 	<% if @review.critic_id == session[:user_id] %>
