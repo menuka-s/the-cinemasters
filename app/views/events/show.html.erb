@@ -25,8 +25,9 @@
       <% if @event.creator_id = session[:user_id] && event_is_editable?(@event) %>
     <%=link_to "Edit this Event", edit_event_path(@event.id)%>
     <%=link_to "Delete this Event", event_path(@event.id), :method => :delete, :class => "delete", :confirm => "Are you sure ?"%>
-    <a href="/events/<%= @event.id %>/invite">Event Admin: Select Reviewers</a>
   <% end %>
+    <a href="/events/<%= @event.id %>/invite">Event Admin: Select Reviewers</a>
+
     </div>
 </div>
 
