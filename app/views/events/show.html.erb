@@ -13,7 +13,7 @@
   </div>
 
   <div class="event-review-container">
-    <p class="gray">REVIEWS FOR THIS EVENT ARE</p>
+    <p class="gray">REVIEWS FOR THIS EVENT:</p>
     <% if @event.pub_date > Date.today %>
       <button class="aButton" onclick="location.href='/events/<%= @event.id %>/invite';" id="make_invite">SELECT REVIEWERS</button>
         <% if @event.creator_id == session[:user_id] && event_is_editable?(@event) %>

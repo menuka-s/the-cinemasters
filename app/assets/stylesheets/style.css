@@ -735,7 +735,7 @@ button:hover {
 	text-align: justify;
 }
 
-.rating-content p:first-child:first-letter { 
+.rating-content p:first-child:first-letter {
 	float: left;
 	color: gray;
 	font-size: 75px;
@@ -770,3 +770,36 @@ button:hover {
 .review-paragraph {
 	margin-bottom: 3em;
 }
+
+.footer{
+	clear: both;
+	margin-top: 300px;
+	margin-bottom: 2em;
+
+}
+.footer a{
+	text-decoration: none;
+	color:black;
+	font-size: 24px;
+	text-decoration: none;
+	margin: 1em auto;
+	background: #f6f6f6;
+	border: none;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	width: 175px;
+	display: block;
+	outline-width: 0;
+	background-color: none;
+	color: black;
+	transition: all 0.5s linear;
+}
+
+.footer a:hover {
+	background-color: black;
+	color: white;
+	transition: all 0.5s linear;
+}
+
