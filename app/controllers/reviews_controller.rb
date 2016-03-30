@@ -24,7 +24,7 @@ class ReviewsController < ApplicationController
     review = Review.find(params["review_id"])
     review.draft = params["fieldtext"]
     review.save
-    render json: {"foo":"bar"}
+    render json: {"foo"=>"bar"}
   end
 
   def index
@@ -57,7 +57,7 @@ class ReviewsController < ApplicationController
     end
 
     if @review.critic_id != session[:user_id] || @review.event.pub_date <= Date.today
-      redirect_to @review 
+      redirect_to @review
     end
 
   end
