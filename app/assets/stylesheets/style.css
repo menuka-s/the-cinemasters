@@ -145,7 +145,7 @@ input[type=submit]:hover {
 
 .main {
 	width: 80%;
-	height: 60%;
+	height: 100%;
 	margin: 5em auto;
 	text-align: center;
 	border-top: 1px solid gray;
@@ -503,12 +503,19 @@ input[type=submit]:hover {
 }
 
 .social {
-	font-size: 60px;
+	float: left;
+	font-size: 32px;
 }
 
 .social a {
 	color: black;
 	text-decoration: none;
+	transition: all 0.5s;
+}
+
+.social a:hover {
+	color: gray;
+	transition: all 0.5s;
 }
 
 .review-images {
@@ -576,13 +583,13 @@ input[type=submit]:hover {
 .event-review-container {
 	display: block;
 	width: 100%;
-	min-height: 45em;
+	/*min-height: 60em;*/
 }
 
 .event-review-button {
-	width: 25%;
-	margin: 0 auto;
 	display: block;
+	width: 25%;
+	margin: 1em auto;
 }
 
 .gray {
@@ -731,5 +738,15 @@ button:hover {
 	line-height: 60px;
 	padding-right: 3px;
 	padding-left: 3px;
+}
+
+.bar {
+	background-color: black;
+	transition: all 0.5s;
+}
+
+.bar:hover {
+	background-color: gray;
+	transition: all 0.5s;
 }
 
