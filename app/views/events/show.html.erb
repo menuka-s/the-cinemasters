@@ -3,9 +3,9 @@
   <h3 class="gray">REVIEWING</h3>
   <h1><%= @event.movie.name %></h1>
   <div class="border"></div>
-<div class = "movie-title"><%= @event.movie.name %></div>
-  <div class = "pub-date">Publish Date: <%=@event.pub_date.to_s%></div>
-  <div class = "movie-img"><img src=<%=@event.movie.movie_image%>></div>
+  <div class ="movie-img">
+    <img src=<%=@event.movie.movie_image%>>
+  </div>
   <div class="event-review-container">
     <p class="gray">REVIEWS FOR THIS EVENT ARE</p>
       <% @event.reviews.each do |review| %>
