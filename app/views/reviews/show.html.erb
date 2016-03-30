@@ -24,7 +24,7 @@
 			</div>
 			<% else %>
 			<div class="bar" style="background-color: black ;width: <%= val %>%;height: 20px">
-				<p>OTHER | <%= val %> / 50</p>
+				<p><%= @labels[index].upcase %> | <%= val %> / 50</p>
 			</div>
 			<% end %>
 		<% end %>

@@ -209,6 +209,10 @@ input[type=submit]:hover {
 	width: 60%;
 }
 
+.review-content input {
+	float: left;
+}
+
 .review-2 {
 	display: inline-block;
 	width: 30%;
