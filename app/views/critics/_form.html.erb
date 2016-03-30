@@ -1,28 +1,27 @@
-<%= form_for @critic do |f| %>
+<div class="main form">
+  <%= form_for @critic do |f| %>
 
-  <% if @critic.errors.any? %>
-    <%= @critic.errors.full_messages.each do |error| %>
-      <%= error %>
+    <% if @critic.errors.any? %>
+      <%= @critic.errors.full_messages.each do |error| %>
+        <%= error %>
+      <% end %>
     <% end %>
+
+    <h1>NEW CRITIC</h1>
+
+    <%= f.text_field :username, :placeholder => 'USERNAME' %>
+
+    <%= f.text_field :email, :placeholder => 'EMAIL' %>
+
+    <%= f.password_field :password, :placeholder => 'PASSWORD' %>
+
+    <%= f.password_field :password_confirmation, :placeholder => 'PASSWORD' %>
+
+
+    <%- f.label :profile_image %>
+    <%= f.file_field :profile_image %>
+    
+    <%= f.submit %>
+
   <% end %>
-
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-
-
-  <%- f.label :profile_image %>
-  <%= f.file_field :profile_image %>
-  
-  <%= f.submit %>
-
-<% end %>
-
+</div>
