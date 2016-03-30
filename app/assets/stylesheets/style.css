@@ -500,6 +500,7 @@ input[type=submit]:hover {
 
 .rating-content {
 	margin-top: 3em;
+	text-align: left;
 }
 
 .social {
@@ -578,7 +579,7 @@ input[type=submit]:hover {
 
 .event-review h1, .event-review p {
 	background-color: black;
-} 
+}
 
 .event-review-container {
 	display: block;
