@@ -27,10 +27,9 @@
 <nav class="<%=i%>">
 	<ul id="left">
 		<% if current_user %>
-			<li><%= link_to "#{current_user.username.upcase}", current_user %></li> |<li><a href="/logout">LOG OUT</a></li> |<li><a href="/critics">VIEW CRITICS</a></li>
+			<li><%= link_to "#{current_user.username.upcase}", current_user %></li> |<li><a href="/logout">LOG OUT</a></li>
 		<% else %>
 			<li><a href='/login'>LOG IN</a></li>
-			<li><a href="/critics">VIEW CRITICS</a></li>
 		<% end %>
 	</ul>
 	<ul id='center'>
