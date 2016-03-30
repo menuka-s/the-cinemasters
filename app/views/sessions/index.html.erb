@@ -13,7 +13,7 @@
   <% Movie.all.each do |movie| %>
   <% if event_is_publishible?(movie.events.last)%>
     <div class="review-2">
-      <div class="review-2-image" style="background-image: url(<%= movie.img_url %>)">
+      <div class="review-2-image" style="background-image: url(<%= movie.movie_image.url %>)">
         <p>Added <%= time_ago_in_words(movie.created_at) %> ago</p>
         <h1 class="white-link"><%= link_to movie.name, "/movies/" + movie.id.to_s %></h1>
       </div>

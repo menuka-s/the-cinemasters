@@ -10,10 +10,13 @@
 
 	<h2>Review for <%= @review.movie.name %></h2>
 	<h3><%= @review.critic.username %></h3>
+	<% if current_user != nil %>
+		<button class="aButton" onclick="location.href='/events/<%= @review.event.id %>';">BACK TO EVENT</button>
+	<% end %>
 
 	<div class="review-images">
-		<img src="<%= @review.critic.profile_image %>">
-		<img src="<%= @review.movie.img_url %>">
+		<a href="/critics/<%=@review.critic.id%>"><img src="<%= @review.critic.profile_image %>"></a>
+		<a href="/movies/<%=@review.movie.id%>"><img src="<%= @review.movie.movie_image.url %>"></a>
 	</div>
 <style>
 .review_scores {
@@ -35,7 +38,7 @@
 				<p><%= @labels[index].upcase %> <span class="review_scores"><%= val %> / 10</span></p>
 			</div>
 			<% else %>
-			<div class="bar" style="width: <%= val %>%;height: 20px">
+			<div class="bar" style="width: <%= val.to_i * 2 %>%;height: 20px">
 				<p><%= @labels[index].upcase %> <span class="review_scores"><%= val %> / 50</span></p>
 			</div>
 			<% end %>

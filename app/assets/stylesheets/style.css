@@ -22,8 +22,8 @@ body {
 }
 
 #center {
-	margin-right: 35em;
-	float: right;
+	position: absolute;
+	left: 40%;
 	text-align: center;
 }
 
