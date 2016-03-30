@@ -9,13 +9,17 @@
   <% end %>
   <div class="border"></div>
   <div class ="movie-img">
-    <img src=<%=@event.movie.movie_image%>>
+    <img src=<%=@event.movie.movie_image.url%>>
   </div>
 
   <div class="event-review-container">
     <p class="gray">REVIEWS FOR THIS EVENT:</p>
     <% if @event.pub_date > Date.today %>
       <button class="aButton" onclick="location.href='/events/<%= @event.id %>/invite';" id="make_invite">SELECT REVIEWERS</button>
+        <% if @event.creator_id == session[:user_id] && event_is_editable?(@event) %>
+    <%=link_to "EDIT EVENT", edit_event_path(@event.id), :class => 'aButton'%>
+    <%=link_to "DELETE EVENT", event_path(@event.id), :method => :delete, :class => "delete aButton", :confirm => "Are you sure ?"%>
+    <% end %>
     <% end %>
       <% @event.reviews.each do |review| %>
         <div class="event-review" style="background-image: url(<%= review.critic.profile_image %>)">
@@ -29,16 +33,5 @@
         </div>
       <% end %>
   </div>
-
-    <br>
-    <div class="event-review-button">
-      <% if @event.creator_id = session[:user_id] && event_is_editable?(@event) %>
-        <%=link_to "EDIT EVENT", edit_event_path(@event.id), :class => 'aButton'%>
-        <%=link_to "DELETE EVENT", event_path(@event.id), :method => :delete, :class => "delete aButton", :confirm => "Are you sure ?"%>
-        <% end %>
-        <% if @event.creator_id == session[:user_id] %>
-                <br><a class="aButton" href="/events/<%= @event.id %>/invite">SELECT REVIEWERS</a>
-        <% end %>
-    </div>
 </div>
 
