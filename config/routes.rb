@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :movies
   get '/reviews/new/:event_id' => 'reviews#new'
   resources :reviews
+  post '/reviews/:id/draftsave' => 'reviews#draftsave'
   post '/reviews/invite_handler' => 'reviews#invite_handler'   #not restful. sorry
 
 
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  root 'sessions#index'
+  # root 'sessions#index'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

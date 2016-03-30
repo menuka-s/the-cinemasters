@@ -30,11 +30,16 @@
       <% end %>
   </div>
 
-  <div class="event-review-button">
-    <% if @event.creator_id = session[:user_id] && event_is_editable?(@event) %>
-      <%=link_to "EDIT EVENT", edit_event_path(@event.id), :class => 'aButton'%>
-      <%=link_to "DELETE EVENT", event_path(@event.id), :method => :delete, :class => "delete aButton", :confirm => "Are you sure ?"%>
-    <% end %>
-  </div>
+
+    <div class="event-review-button">
+      <% if @event.creator_id = session[:user_id] && event_is_editable?(@event) %>
+        <%=link_to "EDIT EVENT", edit_event_path(@event.id), :class => 'aButton'%>
+        <%=link_to "DELETE EVENT", event_path(@event.id), :method => :delete, :class => "delete aButton", :confirm => "Are you sure ?"%>
+        <a class="aButton" href="/events/<%= @event.id %>/invite">SELECT REVIEWERS</a>
+        <% end %>
+        <% if @event.creator_id = session[:user_id] %>
+          <br><a href="/events/<%= @event.id %>/invite">Event Admin: Select Reviewers</a>
+        <% end %>
+    </div>
 </div>
 

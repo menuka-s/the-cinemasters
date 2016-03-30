@@ -49,6 +49,11 @@
 		<div class="scorecard"><%=@total%></div>
 	</div>
 
+	<% if @review.critic_id == session[:user_id] %>
+		<% if @review.event.pub_date > Date.today %>
+			<a class="aButton" href="/reviews/<%=@review.id%>/edit">EDIT REVIEW</a>
+		<% end %>
+	<% end %>
 	<div class="social">
 		<a href="#">
 			<div class="fa  fa-facebook-square"></div>
