@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :movies
   get '/reviews/new/:event_id' => 'reviews#new'
   resources :reviews
+  post '/reviews/:id/draftsave' => 'reviews#draftsave'
   post '/reviews/invite_handler' => 'reviews#invite_handler'   #not restful. sorry
 
 
