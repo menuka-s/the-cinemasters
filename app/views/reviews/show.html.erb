@@ -47,6 +47,11 @@
 		<%= simple_format(@review.content.gsub(/\n/, '<br>'))%>
 	</div>
 
+	<% if @review.critic_id == session[:user_id] %>
+		<% if @review.event.pub_date > Date.today %>
+			<a href="/reviews/" + @review.id + "/edit">Edit your review</a>
+		<% end %>
+	<% end %>
 
 	<div class="social">
 		<a href="#">
