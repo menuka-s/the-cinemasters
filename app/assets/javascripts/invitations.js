@@ -6,7 +6,7 @@ $(document).on("click","#make_invite", function(e) {
 			method: 'post',
 			data: ''
 	}).done(function (response){
-		$('#invcodes').append("<li>/invitations/" + response["code"] + '&nbsp;&nbsp; <a class="del_invitation" href="' + response["code"] + '">(delete)</a></li>');
+		$('#invcodes').append("<li>http://localhost:3000/invitations/" + response["code"] + '&nbsp;&nbsp; <a class="del_invitation" href="' + response["code"] + '">(delete)</a></li>');
 	});
 });
 

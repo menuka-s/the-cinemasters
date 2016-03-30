@@ -15,6 +15,11 @@ class CriticsController < ApplicationController
   def edit
   end
 
+  def partial
+    @critic = Critic.find(current_user.id)
+    render "layouts/_usernav", layout: false
+  end
+
   def create
     @critic = Critic.new(critic_params)
     if @critic.save

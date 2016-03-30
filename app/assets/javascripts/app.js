@@ -33,13 +33,23 @@ $(document).ready(function() {
 		// }, 0);
 	});
 
-	$("#critic-event-tab").on('click', function() {
+	$("#critic-event").on('click', "#critic-event-tab", function() {
 		if($("#critic-event").hasClass("slide-left")) {
-			$(this).parent().addClass("slide-right", 500, "linear");
-			$(this).parent().removeClass("slide-left");
+      $("#critic-event").empty();
+      $.ajax({
+        method: "get",
+        url: "/critics/partial",
+        data: {}
+        })
+      .done(function(response){
+        $("#critic-event").append(response)
+      });
+			$("#critic-event").addClass("slide-right", 500, "linear");
+
+			$("#critic-event").removeClass("slide-left");
 		} else {
-			$(this).parent().removeClass("slide-right");
-			$(this).parent().addClass("slide-left", 500, "linear");
+			$("#critic-event").removeClass("slide-right");
+			$("#critic-event").addClass("slide-left", 500, "linear");
 		};
 	});
 });
