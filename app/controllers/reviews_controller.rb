@@ -84,7 +84,7 @@ class ReviewsController < ApplicationController
     @review.draft = ""
     if @review.critic_id == session[:user_id]
       if @review.save
-        redirect_to @review.event
+        redirect_to @review
       else
         render "review/edit"
       end
