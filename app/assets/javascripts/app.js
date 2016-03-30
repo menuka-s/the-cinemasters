@@ -10,28 +10,27 @@ $(document).ready(function() {
 		}, 1500);
 	})
 
-	$("#cover").slideUp(500, function(){
-	  $(".tagline").fadeIn(2000);
-	  $(".review").fadeIn(3000);
-	});
-
-	//WITHOUT COVER NEED TO FADEIN THESE TWO
 	$(".tagline").fadeIn(2000);
   $(".review").fadeIn(3000);
 
 	$("#nav-button-hover").hover(function() {
     $("nav").slideDown(1000, function() {
+    	$("nav").addClass("active");
+    	$("nav").removeClass("inactive");
     	$("#nav-button-click").fadeIn(3000);
     });
 	  }
 	);
 
 	$("#nav-button-click").on('click', function() {
-		$("nav").slideUp(1000);
+		$("nav").slideUp(1000, function() {
+			$("nav").addClass("inactive");
+			$("nav").removeClass("active");
+		});
 		$("#nav-button-click").fadeOut(1000);
-		$(".hidden-button").animate({
-			opacity: 0
-		}, 0);
+		// $(".hidden-button").animate({
+		// 	opacity: 0
+		// }, 0);
 	});
 
 	$("#critic-event-tab").on('click', function() {

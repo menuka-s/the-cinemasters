@@ -27,7 +27,7 @@
         <%=link_to "DELETE EVENT", event_path(@event.id), :method => :delete, :class => "delete aButton", :confirm => "Are you sure ?"%>
         <a class="aButton" href="/events/<%= @event.id %>/invite">SELECT REVIEWERS</a>
   <% end %>
-    <a href="/events/<%= @event.id %>/invite">Event Admin: Select Reviewers</a>
+    <a class="aButton" href="/events/<%= @event.id %>/invite">SELECT REVIEWERS</a>
 
     </div>
 </div>
