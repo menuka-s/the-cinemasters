@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   get '/critics/partial' => 'critics#partial'
   resources :critics, except: [:new]
+
   post '/invitations/new' => 'invitations#new'
   delete '/invitations/:id' => 'invitations#delete'
   get '/invitations/:id' => 'invitations#redeem'
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  # root 'sessions#index'
+  root 'sessions#index'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
