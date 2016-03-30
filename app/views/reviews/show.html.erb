@@ -39,13 +39,13 @@
 			</div>
 			<% end %>
 		<% end %>
-		
+
 		<div class="bar" style="background-color: black; width: <%= @total %>%;height:20px;"><p>TOTAL | <span class="review_scores"><%= @total %> / 100</span></p></div>
 		<div id="total_outline"></div>
 	</div>
 
 	<div class="rating-content">
-		<p><%= @review.content %></p>
+		<%= simple_format(@review.content.gsub(/\n/, '<br>'))%>
 	</div>
 
 
