@@ -1,20 +1,25 @@
-
-<%= form_for @event do |f| %>
-
-  <% if @event.errors.any? %>
-    <%= @event.errors.full_messages.each do |error| %>
-      <%= error %>
+<div class="main form">
+  <h1>CREATE A NEW REVIEW EVENT!</h1>
+  <%= form_for @event do |f| %>
+    <% if @event.errors.any? %>
+      <%= @event.errors.full_messages.each do |error| %>
+        <%= error %>
+      <% end %>
     <% end %>
+  <div class = "movie-selector">Select a film:
+  <%= collection_select(:event, :movie_id, Movie.all, :id, :name, prompt: true) %>
+  </div>
+  <p>OR</p>
+  <%=link_to "REGISTER NEW MOVIE", controller: "movies", action: "new"%>
+  <div class = "pub-date">
+    Publishing Date:
+    <%= f.date_field :pub_date %>
+  </div>
+  <div class = "event-name">
+    <%= f.text_field :name, :placeholder => 'EVENT NAME' %>
+  </div>
+
+    <%= f.submit %>
+
   <% end %>
-<div class = "pub-date">
-  Publishing Date:
-  <%= f.date_field :pub_date %>
 </div>
-<div class = "event-name">
-  Event Name:
-  <%= f.text_field :name %>
-</div>
-
-  <%= f.submit %>
-
-<% end %>

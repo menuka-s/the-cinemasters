@@ -1,5 +1,4 @@
 $(document).ready(function() {
-	$(".bar").hide();
 	$(".review").hide();
 	$( ".down" ).animate({
     fontSize: "5em"
@@ -35,13 +34,13 @@ $(document).ready(function() {
 		}, 0);
 	});
 
-	$("#critic-event").on('click', function() {
+	$("#critic-event-tab").on('click', function() {
 		if($("#critic-event").hasClass("slide-left")) {
-			$(this).addClass("slide-right", 500, "linear");
-			$(this).removeClass("slide-left");
+			$(this).parent().addClass("slide-right", 500, "linear");
+			$(this).parent().removeClass("slide-left");
 		} else {
-			$(this).removeClass("slide-right");
-			$(this).addClass("slide-left", 500, "linear");
+			$(this).parent().removeClass("slide-right");
+			$(this).parent().addClass("slide-left", 500, "linear");
 		};
 	});
 });

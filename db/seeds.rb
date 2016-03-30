@@ -16,15 +16,17 @@ Movie.create(name: "Argo", imdb_url: "http://www.imdb.com/title/tt1024648/", img
 
 Movie.create(name: "The Artist", imdb_url: "http://www.imdb.com/title/tt1655442/", img_url: "https://generationfilm.files.wordpress.com/2011/11/artist_primary.jpg",movie_image: File.new("#{Rails.root}/public/theartist.jpg"))
 
-Critic.create(username: "Garfield Pincenez", password: "password", email: "radical_saint@yahoo.net", profile_image: File.new("#{Rails.root}/public/profile.jpg"))
+Critic.create(username: "Mike Busch", password: "password", email: "radical_saint@yahoo.net", profile_image: File.new("#{Rails.root}/public/mike.jpg"))
 
-Critic.create(username: "Charles Fournier", password: "password", email: "turkishdelight44@comcast.net", profile_image: File.new("#{Rails.root}/public/profile.jpg"))
+Critic.create(username: "Duke Green", password: "password", email: "turkishdelight44@comcast.net", profile_image: File.new("#{Rails.root}/public/duke.jpg"))
 
-Critic.create(username: "Kerry Collins", password: "password", email: "awalkonthewordside@aol.com", profile_image: File.new("#{Rails.root}/public/profile.jpg"))
+Critic.create(username: "Casey Cumbow", password: "password", email: "awalkonthewordside@aol.com", profile_image: File.new("#{Rails.root}/public/casey.jpg"))
 
-Critic.create(username: "Arthur Mastersonsen", password: "password", email: "squidwordwasright@boosh.org", profile_image: File.new("#{Rails.root}/public/profile.jpg"))
+Critic.create(username: "Alyssa Diaz", password: "password", email: "squidwordwasright@boosh.org", profile_image: File.new("#{Rails.root}/public/alyssa.jpg"))
 
-Critic.create(username: "Camel Cayce", password: "password", email: "donttellmomthebabysittersisdead@gmail.com", profile_image: File.new("#{Rails.root}/public/profile.jpg"))
+Critic.create(username: "Matt Baker", password: "password", email: "donttellmomthebabysittersisdead@gmail.com", profile_image: File.new("#{Rails.root}/public/matt.jpg"))
+
+Critic.create(username: "Maurice Rabb", password: "password", email: "maurice@gmail.com", profile_image: File.new("#{Rails.root}/public/maurice.jpg"))
 
 Event.create(pub_date: Date.today, name: "Everyone but Camel.", creator: Critic.find(1), movie: Movie.find(1))
 
@@ -36,53 +38,53 @@ Event.create(pub_date: Date.today, name: "Ben Affleck, Director?", creator: Crit
 
 Event.create(pub_date: Date.today, name: "Black and white is back!", creator: Critic.find(5), movie: Movie.find(5))
 
-Review.create(critic: Critic.find(1), event: Event.find(1), content: Faker::Lorem.paragraph(3), ratings: "5,5,4,3,5,7,5,2,2")
+Review.create(critic: Critic.find(1), event: Event.find(1), content: Faker::Lorem.paragraph(3), ratings: "5,5,4,3,5,42")
 
-Review.create(critic: Critic.find(2), event: Event.find(1), content: Faker::Lorem.paragraph(3), ratings: "5,4,3,5,7,5,2,2,5")
+Review.create(critic: Critic.find(2), event: Event.find(1), content: Faker::Lorem.paragraph(3), ratings: "5,4,3,5,7,42")
 
-Review.create(critic: Critic.find(3), event: Event.find(1), content: Faker::Lorem.paragraph(3), ratings: "2,2,5,5,4,3,5,7,5")
+Review.create(critic: Critic.find(3), event: Event.find(1), content: Faker::Lorem.paragraph(3), ratings: "2,2,5,5,4,42")
 
-Review.create(critic: Critic.find(4), event: Event.find(1), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,4,3,5,7")
+Review.create(critic: Critic.find(4), event: Event.find(1), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,42")
 
-Review.create(critic: Critic.find(1), event: Event.find(2), content: Faker::Lorem.paragraph(3), ratings: "5,5,4,3,5,7,5,2,2")
+Review.create(critic: Critic.find(1), event: Event.find(2), content: Faker::Lorem.paragraph(3), ratings: "5,5,4,3,5,42")
 
-Review.create(critic: Critic.find(2), event: Event.find(2), content: Faker::Lorem.paragraph(3), ratings: "5,4,3,5,7,5,2,2,5")
+Review.create(critic: Critic.find(2), event: Event.find(2), content: Faker::Lorem.paragraph(3), ratings: "5,4,3,5,7,42")
 
-Review.create(critic: Critic.find(3), event: Event.find(2), content: Faker::Lorem.paragraph(3), ratings: "2,2,5,5,4,3,5,7,5")
+Review.create(critic: Critic.find(3), event: Event.find(2), content: Faker::Lorem.paragraph(3), ratings: "2,2,5,5,4,42")
 
-Review.create(critic: Critic.find(4), event: Event.find(2), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,4,3,5,7")
+Review.create(critic: Critic.find(4), event: Event.find(2), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,42")
 
-Review.create(critic: Critic.find(5), event: Event.find(2), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,4,3,5,7")
+Review.create(critic: Critic.find(5), event: Event.find(2), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,42")
 
-Review.create(critic: Critic.find(1), event: Event.find(3), content: Faker::Lorem.paragraph(3), ratings: "5,5,4,3,5,7,5,2,2")
+Review.create(critic: Critic.find(1), event: Event.find(3), content: Faker::Lorem.paragraph(3), ratings: "5,5,4,3,5,42")
 
-Review.create(critic: Critic.find(2), event: Event.find(3), content: Faker::Lorem.paragraph(3), ratings: "5,4,3,5,7,5,2,2,5")
+Review.create(critic: Critic.find(2), event: Event.find(3), content: Faker::Lorem.paragraph(3), ratings: "5,4,3,5,7,42")
 
-Review.create(critic: Critic.find(3), event: Event.find(3), content: Faker::Lorem.paragraph(3), ratings: "2,2,5,5,4,3,5,7,5")
+Review.create(critic: Critic.find(3), event: Event.find(3), content: Faker::Lorem.paragraph(3), ratings: "2,2,5,5,4,42")
 
-Review.create(critic: Critic.find(4), event: Event.find(3), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,4,3,5,7")
+Review.create(critic: Critic.find(4), event: Event.find(3), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,42")
 
-Review.create(critic: Critic.find(5), event: Event.find(3), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,4,3,5,7")
+Review.create(critic: Critic.find(5), event: Event.find(3), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,42")
 
-Review.create(critic: Critic.find(1), event: Event.find(4), content: Faker::Lorem.paragraph(3), ratings: "5,5,4,3,5,7,5,2,2")
+Review.create(critic: Critic.find(1), event: Event.find(4), content: Faker::Lorem.paragraph(3), ratings: "5,5,4,3,5,42")
 
-Review.create(critic: Critic.find(2), event: Event.find(4), content: Faker::Lorem.paragraph(3), ratings: "5,4,3,5,7,5,2,2,5")
+Review.create(critic: Critic.find(2), event: Event.find(4), content: Faker::Lorem.paragraph(3), ratings: "5,4,3,5,7,42")
 
-Review.create(critic: Critic.find(3), event: Event.find(4), content: Faker::Lorem.paragraph(3), ratings: "2,2,5,5,4,3,5,7,5")
+Review.create(critic: Critic.find(3), event: Event.find(4), content: Faker::Lorem.paragraph(3), ratings: "2,2,5,5,4,42")
 
-Review.create(critic: Critic.find(4), event: Event.find(4), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,4,3,5,7")
+Review.create(critic: Critic.find(4), event: Event.find(4), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,42")
 
-Review.create(critic: Critic.find(5), event: Event.find(4), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,4,3,5,7")
+Review.create(critic: Critic.find(5), event: Event.find(4), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,42")
 
-Review.create(critic: Critic.find(1), event: Event.find(5), content: Faker::Lorem.paragraph(3), ratings: "5,5,4,3,5,7,5,2,2")
+Review.create(critic: Critic.find(1), event: Event.find(5), content: Faker::Lorem.paragraph(3), ratings: "5,5,4,3,5,42")
 
-Review.create(critic: Critic.find(2), event: Event.find(5), content: Faker::Lorem.paragraph(3), ratings: "5,4,3,5,7,5,2,2,5")
+Review.create(critic: Critic.find(2), event: Event.find(5), content: Faker::Lorem.paragraph(3), ratings: "5,4,3,5,7,42")
 
-Review.create(critic: Critic.find(3), event: Event.find(5), content: Faker::Lorem.paragraph(3), ratings: "2,2,5,5,4,3,5,7,5")
+Review.create(critic: Critic.find(3), event: Event.find(5), content: Faker::Lorem.paragraph(3), ratings: "2,2,5,5,4,42")
 
-Review.create(critic: Critic.find(4), event: Event.find(5), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,4,3,5,7")
+Review.create(critic: Critic.find(4), event: Event.find(5), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,42")
 
-Review.create(critic: Critic.find(5), event: Event.find(5), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,4,3,5,7")
+Review.create(critic: Critic.find(5), event: Event.find(5), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,42")
 
 Critic.create(username: "iank", email: "ian@ian.com", password: "password", profile_image: File.new("#{Rails.root}/public/profile.jpg"))
-Review.create(event_id: 1, critic_id: 6, ratings: "", content: "")
+Review.create(event_id: 1, critic_id: 7, ratings: "", content: "")

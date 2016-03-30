@@ -3,8 +3,6 @@
 	<h1><%= @critic.username.upcase %> REVIEWS</h1>
 	<img class="profile-image" src="<%= @critic.profile_image %>">
 
-	<% if @critic.id == session[:user_id] %>
-	  <%= render 'critics/private' %>
-	<% end %>
-	  <%= render 'critics/public' %>
+	<%= render 'critics/public' %>
+
 </div>

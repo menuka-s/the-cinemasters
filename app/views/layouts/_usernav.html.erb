@@ -1,0 +1,33 @@
+<div id="critic-event" class="slide-left">
+  <div id="critic-event-content">
+    <% @critic = Critic.find(session[:user_id]) %>
+    <h2>WELCOME <%= @critic.username.upcase %> </h2>
+    <h3>YOU'RE INVITED TO THE FOLLOWING EVENTS:</h3>
+    <ul>
+    <% @critic.joined_events.each do |event| %>
+      <div class="event">
+        <p><li><%= link_to event.name, event %></li></p>
+      </div>
+    <% end %>
+    </ul>
+    <h3> EVENTS YOU CREATED: <a href="/events/new">(Create New)</a></h3>
+    <ul>
+    <% @critic.created_events.each do |event| %>
+      <li><%= link_to event.name, event %></li>
+    <% end %>
+    </ul>
+    <br><br>
+
+    <h3>Invite a friend to join Cinemasters!</h3>
+    You've created the following invitation codes: <br>
+    <ul id="invcodes">
+    <% @critic.invitations.each do |inv| %>
+      <li>/invitations/<%= inv.code %> <a class="del_invitation" href="<%= inv.code %>">  &nbsp;&nbsp; (delete)</a></li> 
+    <% end %>
+    </ul>
+    <button id="make_invite">Generate Invitation Code</button>
+
+
+    </div>
+    <div id="critic-event-tab"></div>
+  </div>
