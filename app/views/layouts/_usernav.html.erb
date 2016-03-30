@@ -22,7 +22,7 @@
     You've created the following invitation codes: <br>
     <ul id="invcodes">
     <% @critic.invitations.each do |inv| %>
-      <li>/invitations/<%= inv.code %> <a class="del_invitation" href="<%= inv.code %>"> (delete)</a></li> 
+      <li>/invitations/<%= inv.code %> <a class="del_invitation" href="<%= inv.code %>">  &nbsp;&nbsp; (delete)</a></li> 
     <% end %>
     </ul>
     <button id="make_invite">Generate Invitation Code</button>
