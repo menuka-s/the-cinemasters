@@ -30,7 +30,8 @@
 	<div class="rating-criterias">
 		<% @review.ratings.split(',').each_with_index do |val,index| %>
 			<%if index < 5 %>
-			<div class="bar" style="width: <%= val %>0%;height: 20px">
+			<% width_val = 10 + (val.to_i * 10) %>
+			<div class="bar" style="width: <%= width_val %>%;height: 20px">
 				<p><%= @labels[index].upcase %> <span class="review_scores"><%= val %> / 10</span></p>
 			</div>
 			<% else %>
@@ -39,26 +40,24 @@
 			</div>
 			<% end %>
 		<% end %>
-		<div class="bar" style="width: <%= @total %>%;height:20px"><p>TOTAL <span class="review_scores"><%= @total %> / 100</span></p></div>
-		<div id="total_outline"></div>
 	</div>
 
 	<div class="rating-content">
-		<%= simple_format(@review.content.gsub(/\n/, '<br>'))%>
+		<div class="review-paragraph">
+			<%= simple_format(@review.content.gsub(/\n/, '<br>'))%>
+		</div>
+		<div class="scorecard"><%=@total%></div>
 	</div>
 
 	<% if @review.critic_id == session[:user_id] %>
 		<% if @review.event.pub_date > Date.today %>
-			<a href="/reviews/<%=@review.id%>/edit">Edit your review</a>
+			<a class="aButton" href="/reviews/<%=@review.id%>/edit">EDIT REVIEW</a>
 		<% end %>
 	<% end %>
-
 	<div class="social">
 		<a href="#">
 			<div class="fa  fa-facebook-square"></div>
 		</a>
-
-
 		<a href="https://twitter.com/share">
 			<div class="fa fa-twitter-square"></div>
 		</a>
