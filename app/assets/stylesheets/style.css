@@ -719,3 +719,17 @@ button:hover {
 	color: black;
 	transition: all 0.5s;
 }
+
+.rating-content p {
+	text-align: justify;
+}
+
+.rating-content p:first-child:first-letter { 
+	float: left;
+	color: gray;
+	font-size: 75px;
+	line-height: 60px;
+	padding-right: 3px;
+	padding-left: 3px;
+}
+
