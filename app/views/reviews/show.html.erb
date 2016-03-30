@@ -15,20 +15,33 @@
 		<img src="<%= @review.critic.profile_image %>">
 		<img src="<%= @review.movie.img_url %>">
 	</div>
+<style>
+.review_scores {
+	float: right;
+	padding-right: 10px;
+}
+#total_outline {
+	border-top: 1px solid black;
+	height: 22px;
+	position: relative;
+}
+</style>
 
 	<div class="rating-criterias">
 		<% @review.ratings.split(',').each_with_index do |val,index| %>
 			<%if index < 5 %>
 			<div class="bar" style="background-color: black ;width: <%= val %>0%;height: 20px">
-				<p><%= @labels[index].upcase %> | <%= val %> / 10</p>
+				<p><%= @labels[index].upcase %> | <span class="review_scores"><%= val %> / 10</span></p>
 			</div>
 			<% else %>
 			<div class="bar" style="background-color: black ;width: <%= val %>%;height: 20px">
-				<p><%= @labels[index].upcase %> | <%= val %> / 50</p>
+				<p><%= @labels[index].upcase %> | <span class="review_scores"><%= val %> / 50</span></p>
 			</div>
 			<% end %>
 		<% end %>
-		<div class="bar" style="background-color: black; width: <%= @total %>%;height:20px;"><p>TOTAL <%= @total %></p></div>
+		
+		<div class="bar" style="background-color: black; width: <%= @total %>%;height:20px;"><p>TOTAL | <span class="review_scores"><%= @total %> / 100</span></p></div>
+		<div id="total_outline"></div>
 	</div>
 
 	<div class="rating-content">
