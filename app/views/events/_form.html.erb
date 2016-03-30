@@ -1,11 +1,14 @@
-
+<h1>Create a New Review Event!</h1>
 <%= form_for @event do |f| %>
-
   <% if @event.errors.any? %>
     <%= @event.errors.full_messages.each do |error| %>
       <%= error %>
     <% end %>
   <% end %>
+<div class = "movie-selector">Select a film:
+<%= collection_select(:event, :movie_id, Movie.all, :id, :name, prompt: true) %>
+Or <%=link_to "register", controller: "movies", action: "new"%> a new one</div>
+<br>
 <div class = "pub-date">
   Publishing Date:
   <%= f.date_field :pub_date %>
