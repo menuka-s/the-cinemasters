@@ -30,7 +30,8 @@
 			<li><%= link_to "#{current_user.username.upcase}", current_user %></li> |
 			<li><a href="/logout">LOG OUT</a></li>
 		<% else %>
-			<li class="hidden-button"><a href='/login'>LOG IN</a></li>
+			<li><a href='/login'>LOG IN</a></li>
+			<li><a href="/critics">VIEW CRITICS</a></li>
 		<% end %>
 	</ul>
 	<ul id='center'>
@@ -42,7 +43,9 @@
 </nav>
 
 <% if current_user %>
+<div id="critic-event" class="slide-left">
   <%= render 'layouts/usernav' %>
+</div>
 <% end %>
 
 <%= yield %>

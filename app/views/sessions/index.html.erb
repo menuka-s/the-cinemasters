@@ -9,6 +9,7 @@
 <div class="main">
 	<h1 class="tagline">MOVIES</h1>
 
+
   <% Movie.all.each do |movie| %>
   <% if event_is_publishible?(movie.events.last)%>
     <div class="review-2">
@@ -19,5 +20,4 @@
     </div>
     <%end%>
   <% end %>
-  <!-- <a href="/critics" -->
 </div>
