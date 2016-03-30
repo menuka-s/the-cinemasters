@@ -10,6 +10,7 @@
 			<%= link_to "IMDB", @movie.imdb_url, :class => "black-link" %>
 		</div>
 
+		<h1>EVENTS</h1>
 		<% @movie.events.each do |event| %>
 		<div class="event-container">
 			<h1><%= event.name %></h1>
