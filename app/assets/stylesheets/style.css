@@ -78,13 +78,17 @@ nav ul li a:hover {
 	margin: 5em auto;
 }
 
-form {
+.main input {
+	margin: 0 auto;
+}
+
+.form {
 	margin: 5em auto;
 	width:250px;
 	text-align: center;
 }
 
-form input {
+.form input {
 	background: #f6f6f6;
 	border: none;
 	border-top: 1px solid black;
@@ -95,23 +99,24 @@ form input {
 	display: block;
 }
 
-form input:focus {
+.form input:focus {
 	outline-width: 0;
 }
 
-form input[type=submit] {
+.form input[type=submit] {
 	background-color: none;
 	color: black;
 	transition: all 0.5s linear;
 }
 
-form input[type=submit]:hover {
+.form input[type=submit]:hover {
 	background-color: black;
 	color: white;
 	transition: all 0.5s linear;
 }
 
 input[type=submit] {
+	margin: 1em auto;
 	background: #f6f6f6;
 	border: none;
 	border-top: 1px solid black;
@@ -206,6 +211,10 @@ input[type=submit]:hover {
 	display: inline-block;
 	float: right;
 	width: 60%;
+}
+
+.review-content input {
+	float: left;
 }
 
 .review-2 {
@@ -311,10 +320,13 @@ input[type=submit]:hover {
 	position: fixed;
 	top: 5em;
 	width: 50em;
-	height: 30em;
+	height: 45em;
 	background-color: #f6f6f6;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 	z-index: 1;
+	overflow: hidden;
+	overflow-y: scroll;
+
 }
 
 #critic-event-content {
@@ -357,8 +369,8 @@ input[type=submit]:hover {
 	background: url("http://www.q8ieng.com/wp-content/uploads/2011/10/IMG_2183-BW.jpg");
 	background-size: cover;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-	opacity: 0.5;
 	color: white;
+	opacity: 0.5;
 }
 
 .splash h1 {
@@ -517,12 +529,12 @@ input[type=submit]:hover {
 .event-review {
 	float: left;
 	display: inline-block;
-	width: 30%;
+	width: 32%;
 	height: 250px;
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
 	vertical-align:top;
-	margin: 0.2em;
+	margin-right: 0.8em;
 	margin-top: 1em;
 	margin-bottom: 1em;
 	-webkit-filter: grayscale(100%);
@@ -549,6 +561,10 @@ input[type=submit]:hover {
 	transition: all 0.5s;
 }
 
+.event-review h1, .event-review p {
+	background-color: black;
+} 
+
 .event-review-container {
 	display: block;
 	width: 100%;
@@ -570,3 +586,97 @@ input[type=submit]:hover {
 	border-bottom: 1px gray solid;
 }
 
+.movie-img img {
+	width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#artistic {
+	width: 10%;
+}
+
+.content {
+	width: 600px;
+	height: 300px;
+}
+
+.movie-selector select {
+	margin: 0 auto;
+  background: #f6f6f6;
+	border: none;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	width: 250px;
+	display: block;
+}
+
+.aButton {
+	text-decoration: none;
+	margin: 1em auto;
+	background: #f6f6f6;
+	border: none;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	width: 250px;
+	display: block;
+	outline-width: 0;
+	background-color: none;
+	color: black;
+	transition: all 0.5s linear;
+}
+
+.aButton:hover {
+	background-color: black;
+	color: white;
+	transition: all 0.5s linear;
+}
+
+button {
+	text-decoration: none;
+	margin: 0 auto 0 auto;
+	background: #f6f6f6;
+	border: none;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	margin-top: 0.5em;
+	width: 250px;
+	display: block;
+	outline-width: 0;
+	background-color: none;
+	color: black;
+	transition: all 0.5s linear;
+}
+
+.event-invite-buttons button {
+	margin-left: -3.1em;
+	width: 300px;
+}
+
+.logo {
+	position: absolute;
+	top: 6em;
+	left: 0;
+	width: 100%;
+	opacity: 0.8;
+}
+
+.logo img {
+	top: 0;
+	left: 0;
+	margin: 0 auto;
+	width: 600px;
+}

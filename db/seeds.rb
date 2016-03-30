@@ -16,15 +16,17 @@ Movie.create(name: "Argo", imdb_url: "http://www.imdb.com/title/tt1024648/", img
 
 Movie.create(name: "The Artist", imdb_url: "http://www.imdb.com/title/tt1655442/", img_url: "https://generationfilm.files.wordpress.com/2011/11/artist_primary.jpg",movie_image: File.new("#{Rails.root}/public/theartist.jpg"))
 
-Critic.create(username: "Garfield Pincenez", password: "password", email: "radical_saint@yahoo.net", profile_image: File.new("#{Rails.root}/public/profile.jpg"))
+Critic.create(username: "Mike Busch", password: "password", email: "radical_saint@yahoo.net", profile_image: File.new("#{Rails.root}/public/mike.jpg"))
 
-Critic.create(username: "Charles Fournier", password: "password", email: "turkishdelight44@comcast.net", profile_image: File.new("#{Rails.root}/public/profile.jpg"))
+Critic.create(username: "Duke Green", password: "password", email: "turkishdelight44@comcast.net", profile_image: File.new("#{Rails.root}/public/duke.jpg"))
 
-Critic.create(username: "Kerry Collins", password: "password", email: "awalkonthewordside@aol.com", profile_image: File.new("#{Rails.root}/public/profile.jpg"))
+Critic.create(username: "Casey Cumbow", password: "password", email: "awalkonthewordside@aol.com", profile_image: File.new("#{Rails.root}/public/casey.jpg"))
 
-Critic.create(username: "Arthur Mastersonsen", password: "password", email: "squidwordwasright@boosh.org", profile_image: File.new("#{Rails.root}/public/profile.jpg"))
+Critic.create(username: "Alyssa Diaz", password: "password", email: "squidwordwasright@boosh.org", profile_image: File.new("#{Rails.root}/public/alyssa.jpg"))
 
-Critic.create(username: "Camel Cayce", password: "password", email: "donttellmomthebabysittersisdead@gmail.com", profile_image: File.new("#{Rails.root}/public/profile.jpg"))
+Critic.create(username: "Matt Baker", password: "password", email: "donttellmomthebabysittersisdead@gmail.com", profile_image: File.new("#{Rails.root}/public/matt.jpg"))
+
+Critic.create(username: "Maurice Rabb", password: "password", email: "maurice@gmail.com", profile_image: File.new("#{Rails.root}/public/maurice.jpg"))
 
 Event.create(pub_date: Date.today, name: "Everyone but Baker.", creator: Critic.find(1), movie: Movie.find(1))
 
@@ -85,4 +87,4 @@ Review.create(critic: Critic.find(4), event: Event.find(5), content: Faker::Lore
 Review.create(critic: Critic.find(5), event: Event.find(5), content: Faker::Lorem.paragraphs(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
 Critic.create(username: "iank", email: "ian@ian.com", password: "password", profile_image: File.new("#{Rails.root}/public/profile.jpg"))
-Review.create(event_id: 1, critic_id: 6, ratings: "", content: "")
+Review.create(event_id: 1, critic_id: 7, ratings: "", content: "")

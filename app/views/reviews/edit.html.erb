@@ -1,48 +1,39 @@
-Edit your review of <%= @review.movie.name %>
+<div class="main">
+  <h1><%= @review.critic.username.upcase %>'S REVIEW</h1>
+  <%= form_for @review do |f| %>
 
-<%= form_for @review do |f| %>
-
-  <% if @review.errors.any? %>
-    <%= @review.errors.full_messages.each do |error| %>
-      <%= error %>
-    <% end %>
-  <% end %>
-
-<style>
-#review_content {width: 700px; height: 400px;}
-body {text-align: left;}
-input {display: inline-block;}
-span {display: inline-block;}
-form input {display: inline-block;}
-</style>
-
-  <table>
-    <% 5.times do |x| %>
-      <tr>
-      <td><%= @labels[x] %></td>
-      <td>
-      <% 10.times do |y| %>
-        <% if @review.ratings.split(',')[x] == (y+1).to_s %>
-          <% checked="checked" %>
-        <% else %>
-          <% checked="" %>
-        <% end %>
-        <input type="radio" name="review[rubric<%=x+1%>]" value="<%=y+1%>" <%= checked %> >
-        <span style="color: #<%= (12-y).to_s(16) %><%= (y+4).to_s(16) %>6"><%=y+1%></span>
+    <% if @review.errors.any? %>
+      <%= @review.errors.full_messages.each do |error| %>
+        <%= error %>
       <% end %>
-      </td></tr>
     <% end %>
-    <tr>
-      <td>Artistic</td>
-      <td><input type="text" size=2 name="rubric6" placeholder=" / 50"></td>
-    </tr>
-  </table>
-  <br><br>
 
-  <%= f.label :content %><br>
-  <%= f.text_area :content %>
-<br>
+    <table>
+      <% 5.times do |x| %>
+        <tr>
+        <td><%= @labels[x] %></td>
+        <td>
+        <% 10.times do |y| %>
+          <% if @review.ratings.split(',')[x] == (y+1).to_s %>
+            <% checked="checked" %>
+          <% else %>
+            <% checked="" %>
+          <% end %>
+          <input type="radio" name="review[rubric<%=x+1%>]" value="<%=y+1%>" <%= checked %> >
+          <span style="color: #<%= (12-y).to_s(16) %><%= (y+4).to_s(16) %>6"><%=y+1%></span>
+        <% end %>
+        </td></tr>
+      <% end %>
+      <tr>
+        <td>Artistic</td>
+          <td><input id="artistic" type="text" size=2 name="rubric6" placeholder=" / 50"></td>
+      </tr>
+    </table>
 
-  <%= f.submit %>
+    <%= f.label :content %><br>
+    <%= f.text_area :content, :class => 'content' %>
 
-<% end %>
+    <%= f.submit %>
+
+  <% end %>
+</div>
