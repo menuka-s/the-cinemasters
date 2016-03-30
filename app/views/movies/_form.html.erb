@@ -3,8 +3,8 @@
   <%= form_for @movie do |f| %>
 
     <% if @movie.errors.any? %>
-      <%= @movie.errors.full_messages.each do |error| %>
-        <%= error %>
+      <% @movie.errors.full_messages.each do |error| %>
+        <div class = "error"><%= error %>!</div>
       <% end %>
     <% end %>
   <div class = "movie-name">
@@ -13,9 +13,9 @@
   <div class = "movie-imdb-link">
     <%= f.text_field :imdb_url, :placeholder => 'IMDB URL' %>
   </div>
-  <%- f.label :movie_image %>
+  <% f.label :movie_image %>
+      Upload an Image for this movie!
     <%= f.file_field :movie_image %>
-
     <%= f.submit %>
 
   <% end %>

@@ -1,5 +1,6 @@
 class Movie < ActiveRecord::Base
   validates :movie_image, presence: true
+  validates :name, :imdb_url, presence: true
 
   has_many :events
   has_many :critics, through: :events

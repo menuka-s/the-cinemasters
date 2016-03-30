@@ -2,8 +2,8 @@
   <h1>EVENT FORM</h1>
   <%= form_for @event do |f| %>
     <% if @event.errors.any? %>
-      <%= @event.errors.full_messages.each do |error| %>
-        <%= error %>
+      <% @event.errors.full_messages.each do |error| %>
+        <div class = "error"><%= error %>!</div>
       <% end %>
     <% end %>
   <div class = "movie-selector">SELECT A MOVIE:

@@ -1,8 +1,8 @@
 
 	<div class="show-movie-container">
 		<h1 class="movie-tite"><%= @movie.name %></h1>
+	<div class="movie-image" style="background-image: url(<%= @movie.movie_image.url %>)">
 
-		<div class="movie-image" style="background-image: url(<%= @movie.movie_image.url %>)">
 		</div>
 
 		<div>
@@ -21,8 +21,8 @@
 						<p>Added <%= time_ago_in_words(review.created_at) %> ago</p>
 						<h1 class="black-link"><%= link_to review.critic.username, "/critics/" + review.critic.id.to_s %></h1>
 						<p><%=truncate( review.content, length: 90 ) %></p>
-						<input type="submit" value="READ REVIEW" 
-    onclick='window.location="/reviews/<%= review.id %>";' />  
+						<input type="submit" value="READ REVIEW"
+    onclick='window.location="/reviews/<%= review.id %>";' />
 					</div>
 				</div>
 			<% end %>

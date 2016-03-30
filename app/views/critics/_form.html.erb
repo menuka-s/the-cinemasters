@@ -2,8 +2,8 @@
   <%= form_for @critic do |f| %>
 
     <% if @critic.errors.any? %>
-      <%= @critic.errors.full_messages.each do |error| %>
-        <%= error %>
+      <% @critic.errors.full_messages.each do |error| %>
+        <div class = "error"><%= error %>!</div>
       <% end %>
     <% end %>
 
@@ -20,7 +20,7 @@
 
     <%- f.label :profile_image %>
     <%= f.file_field :profile_image %>
-    
+
     <%= f.submit %>
 
   <% end %>
