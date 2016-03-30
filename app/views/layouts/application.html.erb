@@ -16,11 +16,13 @@
 </head>
 <body>
 
+
+
 <div class="fa fa-bars" id='nav-button-hover'></div>
 <nav>
 	<ul id="left">
 		<% if current_user %>
-			<li class="hidden-button"><%= link_to "HOME", current_user %></li> |
+			<li class="hidden-button"><%= link_to "#{current_user.username.upcase}", current_user %></li> |
 			<li class="hidden-button"><a href="/logout">LOG OUT</a></li>
 		<% else %>
 			<li class="hidden-button"><a href='/login'>LOG IN</a></li>
@@ -33,6 +35,10 @@
 		<li class="fa fa-bars" id="nav-button-click"></li>
 	</ul>
 </nav>
+
+<% if current_user %>
+  <%= render 'layouts/usernav' %>
+<% end %>
 
 <%= yield %>
 
