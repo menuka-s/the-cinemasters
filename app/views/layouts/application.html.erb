@@ -42,7 +42,9 @@
 </nav>
 
 <% if current_user %>
+<div id="critic-event" class="slide-left">
   <%= render 'layouts/usernav' %>
+</div>
 <% end %>
 
 <%= yield %>
