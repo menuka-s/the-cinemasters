@@ -1,5 +1,6 @@
 <div id="critic-event" class="slide-left">
   <div id="critic-event-content">
+    <% @critic = Critic.find(session[:user_id]) %>
     <h2>WELCOME <%= @critic.username.upcase %> </h2>
     <h3>YOU'RE INVITED TO THE FOLLOWING EVENTS:</h3>
     <ul>
