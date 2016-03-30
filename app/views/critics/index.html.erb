@@ -1,0 +1,8 @@
+<div class="main">
+	<h1>THE CINEMASTERS</h1>
+	<% @critics.each do |critic| %>
+		<div class="event-review" style="background-image: url(<%= critic.profile_image %>)">
+    <h1><%= link_to critic.username, critic %></h1>
+    </div>
+	<% end %>
+</div>
