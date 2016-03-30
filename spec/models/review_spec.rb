@@ -1,9 +1,7 @@
 require 'rails_helper'
 
 describe Review do
-  let(:critic) { Critic.new(username: "Camel Cayce", password: "password", email: "donttellmomthebabysittersisdead@gmail.com") }
-  let(:review) { Review.new(critic: Critic.find(1), event: Event.find(1), content: "This movie was superb! A perfect 5/7.", ratings: "5,5,4,3,5,7,5,2,2") }
-  let(:event) { Event.new(pub_date: Date.today, name: "Synecdoche New York Viewing", creator: Critic.find(1), movie: Movie.find(1)) }
+  let(:review) { Review.new(critic: Critic.new(id: 1), event: Event.new(id: 1), content: "This movie was superb! A perfect 5/7.", ratings: "5,5,4,3,5,7,5,2,2") }
 
   describe "critic" do
     it "should have a critic" do
