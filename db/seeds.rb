@@ -26,7 +26,7 @@ Critic.create(username: "Arthur Mastersonsen", password: "password", email: "squ
 
 Critic.create(username: "Camel Cayce", password: "password", email: "donttellmomthebabysittersisdead@gmail.com", profile_image: File.new("#{Rails.root}/public/profile.jpg"))
 
-Event.create(pub_date: Date.today, name: "Everyone but Camel.", creator: Critic.find(1), movie: Movie.find(1))
+Event.create(pub_date: Date.today, name: "Everyone but Baker.", creator: Critic.find(1), movie: Movie.find(1))
 
 Event.create(pub_date: Date.today, name: "No critic left behind", creator: Critic.find(2), movie: Movie.find(2))
 
@@ -36,53 +36,53 @@ Event.create(pub_date: Date.today, name: "Ben Affleck, Director?", creator: Crit
 
 Event.create(pub_date: Date.today, name: "Black and white is back!", creator: Critic.find(5), movie: Movie.find(5))
 
-Review.create(critic: Critic.find(1), event: Event.find(1), content: Faker::Lorem.paragraph(3), ratings: "5,5,4,3,5,42")
+Review.create(critic: Critic.find(1), event: Event.find(1), content: Faker::Lorem.paragraphs(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
-Review.create(critic: Critic.find(2), event: Event.find(1), content: Faker::Lorem.paragraph(3), ratings: "5,4,3,5,7,42")
+Review.create(critic: Critic.find(2), event: Event.find(1), content: Faker::Lorem.paragraphs(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
-Review.create(critic: Critic.find(3), event: Event.find(1), content: Faker::Lorem.paragraph(3), ratings: "2,2,5,5,4,42")
+Review.create(critic: Critic.find(3), event: Event.find(1), content: Faker::Lorem.paragraphs(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
-Review.create(critic: Critic.find(4), event: Event.find(1), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,42")
+Review.create(critic: Critic.find(4), event: Event.find(1), content: Faker::Lorem.paragraphs(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
-Review.create(critic: Critic.find(1), event: Event.find(2), content: Faker::Lorem.paragraph(3), ratings: "5,5,4,3,5,42")
+Review.create(critic: Critic.find(1), event: Event.find(2), content: Faker::Lorem.paragraphs(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
-Review.create(critic: Critic.find(2), event: Event.find(2), content: Faker::Lorem.paragraph(3), ratings: "5,4,3,5,7,42")
+Review.create(critic: Critic.find(2), event: Event.find(2), content: Faker::Lorem.paragraphs(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
-Review.create(critic: Critic.find(3), event: Event.find(2), content: Faker::Lorem.paragraph(3), ratings: "2,2,5,5,4,42")
+Review.create(critic: Critic.find(3), event: Event.find(2), content: Faker::Lorem.paragraphs(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
-Review.create(critic: Critic.find(4), event: Event.find(2), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,42")
+Review.create(critic: Critic.find(4), event: Event.find(2), content: Faker::Lorem.paragraphs(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
-Review.create(critic: Critic.find(5), event: Event.find(2), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,42")
+Review.create(critic: Critic.find(5), event: Event.find(2), content: Faker::Lorem.paragraphs(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
-Review.create(critic: Critic.find(1), event: Event.find(3), content: Faker::Lorem.paragraph(3), ratings: "5,5,4,3,5,42")
+Review.create(critic: Critic.find(1), event: Event.find(3), content: Faker::Lorem.paragraphs(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
-Review.create(critic: Critic.find(2), event: Event.find(3), content: Faker::Lorem.paragraph(3), ratings: "5,4,3,5,7,42")
+Review.create(critic: Critic.find(2), event: Event.find(3), content: Faker::Lorem.paragraphs(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
-Review.create(critic: Critic.find(3), event: Event.find(3), content: Faker::Lorem.paragraph(3), ratings: "2,2,5,5,4,42")
+Review.create(critic: Critic.find(3), event: Event.find(3), content: Faker::Lorem.paragraphs(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
-Review.create(critic: Critic.find(4), event: Event.find(3), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,42")
+Review.create(critic: Critic.find(4), event: Event.find(3), content: Faker::Lorem.paragraphs(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
-Review.create(critic: Critic.find(5), event: Event.find(3), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,42")
+Review.create(critic: Critic.find(5), event: Event.find(3), content: Faker::Lorem.paragraphs(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
-Review.create(critic: Critic.find(1), event: Event.find(4), content: Faker::Lorem.paragraph(3), ratings: "5,5,4,3,5,42")
+Review.create(critic: Critic.find(1), event: Event.find(4), content: Faker::Lorem.paragraphs(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
-Review.create(critic: Critic.find(2), event: Event.find(4), content: Faker::Lorem.paragraph(3), ratings: "5,4,3,5,7,42")
+Review.create(critic: Critic.find(2), event: Event.find(4), content: Faker::Lorem.paragraphs(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
-Review.create(critic: Critic.find(3), event: Event.find(4), content: Faker::Lorem.paragraph(3), ratings: "2,2,5,5,4,42")
+Review.create(critic: Critic.find(3), event: Event.find(4), content: Faker::Lorem.paragraphs(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
-Review.create(critic: Critic.find(4), event: Event.find(4), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,42")
+Review.create(critic: Critic.find(4), event: Event.find(4), content: Faker::Lorem.paragraphs(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
-Review.create(critic: Critic.find(5), event: Event.find(4), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,42")
+Review.create(critic: Critic.find(5), event: Event.find(4), content: Faker::Lorem.paragraphs(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
-Review.create(critic: Critic.find(1), event: Event.find(5), content: Faker::Lorem.paragraph(3), ratings: "5,5,4,3,5,42")
+Review.create(critic: Critic.find(1), event: Event.find(5), content: Faker::Lorem.paragraphs(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
-Review.create(critic: Critic.find(2), event: Event.find(5), content: Faker::Lorem.paragraph(3), ratings: "5,4,3,5,7,42")
+Review.create(critic: Critic.find(2), event: Event.find(5), content: Faker::Lorem.paragraphs(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
-Review.create(critic: Critic.find(3), event: Event.find(5), content: Faker::Lorem.paragraph(3), ratings: "2,2,5,5,4,42")
+Review.create(critic: Critic.find(3), event: Event.find(5), content: Faker::Lorem.paragraphs(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
-Review.create(critic: Critic.find(4), event: Event.find(5), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,42")
+Review.create(critic: Critic.find(4), event: Event.find(5), content: Faker::Lorem.paragraph(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
-Review.create(critic: Critic.find(5), event: Event.find(5), content: Faker::Lorem.paragraph(3), ratings: "3,3,4,5,5,42")
+Review.create(critic: Critic.find(5), event: Event.find(5), content: Faker::Lorem.paragraphs(3), ratings: "#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(1..10)},#{rand(30..50)}")
 
 Critic.create(username: "iank", email: "ian@ian.com", password: "password", profile_image: File.new("#{Rails.root}/public/profile.jpg"))
 Review.create(event_id: 1, critic_id: 6, ratings: "", content: "")
