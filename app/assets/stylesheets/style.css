@@ -802,4 +802,7 @@ button:hover {
 	color: white;
 	transition: all 0.5s linear;
 }
-
+.error{
+	color: red;
+	font-style: italic;
+}
