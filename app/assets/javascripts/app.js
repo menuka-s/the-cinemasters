@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
 	$(".review").hide();
 	$( ".down" ).animate({
     fontSize: "5em"
