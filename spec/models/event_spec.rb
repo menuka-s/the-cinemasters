@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Event do
-  let(:event) { Event.new(pub_date: Date.today, name: "Synecdoche New York Viewing", creator: Critic.find(1), movie: Movie.find(1)) }
+  let(:event) { Event.new(pub_date: Date.today, name: "Synecdoche New York Viewing", creator: Critic.new(id: 1), movie: Movie.new(id: 1)) }
 
   context "name" do
     it "should have a name" do
