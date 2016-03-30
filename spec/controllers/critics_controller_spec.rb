@@ -12,9 +12,9 @@ let!(:critic) { Critic.create(username: "Maurice Rabb", password: "password", em
   end
 
   describe "GET #show" do
-    it "assigns all critics as @critics" do
+    it "assigns a critic as @critic" do
       get :show
-      expect(assigns(:critics).length).to be(1)
+      expect(assigns(:critic).length).to be(1)
     end
   end
 
