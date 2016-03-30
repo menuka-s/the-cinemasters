@@ -78,6 +78,10 @@ nav ul li a:hover {
 	margin: 5em auto;
 }
 
+.main input {
+	margin: 0 auto;
+}
+
 .form {
 	margin: 5em auto;
 	width:250px;
@@ -207,6 +211,10 @@ input[type=submit]:hover {
 	display: inline-block;
 	float: right;
 	width: 60%;
+}
+
+.review-content input {
+	float: left;
 }
 
 .review-2 {
@@ -521,12 +529,12 @@ input[type=submit]:hover {
 .event-review {
 	float: left;
 	display: inline-block;
-	width: 30%;
+	width: 32%;
 	height: 250px;
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
 	vertical-align:top;
-	margin: 0.2em;
+	margin-right: 0.8em;
 	margin-top: 1em;
 	margin-bottom: 1em;
 	-webkit-filter: grayscale(100%);
@@ -579,7 +587,6 @@ input[type=submit]:hover {
 }
 
 .movie-img img {
-	/*margin-top: 0.5em;*/
 	width: 100%;
 }
 

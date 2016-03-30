@@ -45,14 +45,15 @@ class ReviewsController < ApplicationController
   def edit
     @labels = ["Writing","Acting","Directing","Spec Effects","Score","Artistic"]
     @review = Review.find(params[:id])
-<<<<<<< HEAD
+
     if @review.critic_id != session[:user_id]
       redirect_to '/'
     end
 
-=======
-    redirect_to @review if @review.event.pub_date <= Date.today
->>>>>>> master
+    if @review.event.pub_date <= Date.today
+      redirect_to @review 
+    end
+
   end
 
 #   def create
