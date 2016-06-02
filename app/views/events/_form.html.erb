@@ -1,18 +1,18 @@
 <div class="main form">
-  <h1>CREATE A NEW REVIEW EVENT!</h1>
+  <h1>EVENT FORM</h1>
   <%= form_for @event do |f| %>
     <% if @event.errors.any? %>
-      <%= @event.errors.full_messages.each do |error| %>
-        <%= error %>
+      <% @event.errors.full_messages.each do |error| %>
+        <div class = "error"><%= error %>!</div>
       <% end %>
     <% end %>
-  <div class = "movie-selector">Select a film:
+  <div class = "movie-selector">SELECT A MOVIE:
   <%= collection_select(:event, :movie_id, Movie.all, :id, :name, prompt: true) %>
   </div>
   <p>OR</p>
-  <%=link_to "REGISTER NEW MOVIE", controller: "movies", action: "new"%>
+  <%=link_to "REGISTER NEW MOVIE", {controller: "movies", action: "new"}, class: "aButton"%>
   <div class = "pub-date">
-    Publishing Date:
+    PUBLISHING DATE:
     <%= f.date_field :pub_date %>
   </div>
   <div class = "event-name">

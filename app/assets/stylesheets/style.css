@@ -19,12 +19,11 @@ body {
 	top: 10px;
 	right: 10px;
 	font-size: 32px;
-	display: none;
 }
 
 #center {
-	margin-right: 35em;
-	float: right;
+	position: absolute;
+	left: 45%;
 	text-align: center;
 }
 
@@ -48,7 +47,6 @@ nav {
 	background-color: #000;
 	color: white;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-	display: none;
 	height: 50px;
 	width: 100%;
 	z-index: 1;
@@ -60,6 +58,7 @@ nav ul {
 
 nav ul li {
 	display: inline;
+	margin-left: 0.5em;
 }
 
 nav ul li a {
@@ -71,6 +70,14 @@ nav ul li a {
 nav ul li a:hover {
 	color: gray;
 	transition: all 0.5s linear;
+}
+
+.active {
+	display: block;
+}
+
+.inactive {
+	display: none;
 }
 
 .login {
@@ -138,12 +145,14 @@ input[type=submit]:hover {
 }
 
 .main {
+	position: relative;
 	width: 80%;
-	height: 60%;
+	height: 100%;
 	margin: 5em auto;
 	text-align: center;
 	border-top: 1px solid gray;
 	border-bottom: 1px solid gray;
+	clear: both;
 }
 
 .tagline {
@@ -320,7 +329,7 @@ input[type=submit]:hover {
 	position: fixed;
 	top: 5em;
 	width: 50em;
-	height: 45em;
+	height: 80vh;
 	background-color: #f6f6f6;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 	z-index: 1;
@@ -330,6 +339,7 @@ input[type=submit]:hover {
 }
 
 #critic-event-content {
+	position: relative;
 	width: 80%;
 	height: 100%;
 	float: left;
@@ -338,6 +348,7 @@ input[type=submit]:hover {
 }
 
 #critic-event-tab {
+	position: relative;
 	width: 10%;
 	height: 100%;
 	float: right;
@@ -345,13 +356,13 @@ input[type=submit]:hover {
 }
 
 #critic-event a {
-	color: black;
+	color: gray;
 	text-decoration: none;
 	transition: all 0.5s linear;
 }
 
 #critic-event a:hover {
-	color: gray;
+	color: black;
 	transition: all 0.5s linear;
 }
 
@@ -492,15 +503,23 @@ input[type=submit]:hover {
 
 .rating-content {
 	margin-top: 3em;
+	text-align: left;
 }
 
 .social {
-	font-size: 60px;
+	float: left;
+	font-size: 32px;
 }
 
 .social a {
 	color: black;
 	text-decoration: none;
+	transition: all 0.5s;
+}
+
+.social a:hover {
+	color: gray;
+	transition: all 0.5s;
 }
 
 .review-images {
@@ -563,18 +582,18 @@ input[type=submit]:hover {
 
 .event-review h1, .event-review p {
 	background-color: black;
-} 
+}
 
 .event-review-container {
 	display: block;
 	width: 100%;
-	min-height: 45em;
+	/*min-height: 60em;*/
 }
 
 .event-review-button {
-	width: 25%;
-	margin: 0 auto;
 	display: block;
+	width: 25%;
+	margin: 1em auto;
 }
 
 .gray {
@@ -586,8 +605,18 @@ input[type=submit]:hover {
 	border-bottom: 1px gray solid;
 }
 
+.movie-img {
+	display:flex;
+  justify-content:center;
+  align-items:center;
+  height: 300px;
+  overflow:hidden
+}
+
 .movie-img img {
-	width: 100%;
+	flex-shrink:0;
+  min-width:100%;
+  min-height:100%
 }
 
 table {
@@ -661,6 +690,12 @@ button {
 	transition: all 0.5s linear;
 }
 
+button:hover {
+	background-color: black;
+	color: white;
+	transition: all 0.5s linear;
+}
+
 .event-invite-buttons button {
 	margin-left: -3.1em;
 	width: 300px;
@@ -679,4 +714,95 @@ button {
 	left: 0;
 	margin: 0 auto;
 	width: 600px;
+}
+
+.left {
+	margin-top: 1em;
+	float: left;
+}
+
+.container a {
+	color: gray;
+	transition: all 0.5s;
+}
+
+.container a:hover {
+	color: black;
+	transition: all 0.5s;
+}
+
+.rating-content p {
+	text-align: justify;
+}
+
+.rating-content p:first-child:first-letter {
+	float: left;
+	color: gray;
+	font-size: 75px;
+	line-height: 60px;
+	padding-right: 3px;
+	padding-left: 3px;
+}
+
+.bar {
+	background-color: black;
+	transition: all 0.5s;
+}
+
+.bar:hover {
+	background-color: gray;
+	transition: all 0.5s;
+}
+
+.scorecard {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	font-size: 32px;
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+
+.review-paragraph {
+	margin-bottom: 3em;
+}
+
+.footer{
+	clear: both;
+	margin-top: 300px;
+	margin-bottom: 2em;
+
+}
+.footer a{
+	text-decoration: none;
+	color:black;
+	font-size: 24px;
+	text-decoration: none;
+	margin: 1em auto;
+	background: #f6f6f6;
+	border: none;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	width: 175px;
+	display: block;
+	outline-width: 0;
+	background-color: none;
+	color: black;
+	transition: all 0.5s linear;
+}
+
+.footer a:hover {
+	background-color: black;
+	color: white;
+	transition: all 0.5s linear;
+}
+.error{
+	color: red;
+	font-style: italic;
 }

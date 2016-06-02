@@ -10,37 +10,46 @@ $(document).ready(function() {
 		}, 1500);
 	})
 
-	$("#cover").slideUp(500, function(){
-	  $(".tagline").fadeIn(2000);
-	  $(".review").fadeIn(3000);
-	});
-
-	//WITHOUT COVER NEED TO FADEIN THESE TWO
 	$(".tagline").fadeIn(2000);
   $(".review").fadeIn(3000);
 
 	$("#nav-button-hover").hover(function() {
     $("nav").slideDown(1000, function() {
+    	$("nav").addClass("active");
+    	$("nav").removeClass("inactive");
     	$("#nav-button-click").fadeIn(3000);
     });
 	  }
 	);
 
 	$("#nav-button-click").on('click', function() {
-		$("nav").slideUp(1000);
+		$("nav").slideUp(1000, function() {
+			$("nav").addClass("inactive");
+			$("nav").removeClass("active");
+		});
 		$("#nav-button-click").fadeOut(1000);
-		$(".hidden-button").animate({
-			opacity: 0
-		}, 0);
+		// $(".hidden-button").animate({
+		// 	opacity: 0
+		// }, 0);
 	});
 
-	$("#critic-event-tab").on('click', function() {
+	$("#critic-event").on('click', "#critic-event-tab", function() {
 		if($("#critic-event").hasClass("slide-left")) {
-			$(this).parent().addClass("slide-right", 500, "linear");
-			$(this).parent().removeClass("slide-left");
+      $("#critic-event").empty();
+      $.ajax({
+        method: "get",
+        url: "/critics/partial",
+        data: {}
+        })
+      .done(function(response){
+        $("#critic-event").append(response)
+      });
+			$("#critic-event").addClass("slide-right", 500, "linear");
+
+			$("#critic-event").removeClass("slide-left");
 		} else {
-			$(this).parent().removeClass("slide-right");
-			$(this).parent().addClass("slide-left", 500, "linear");
+			$("#critic-event").removeClass("slide-right");
+			$("#critic-event").addClass("slide-left", 500, "linear");
 		};
 	});
 });

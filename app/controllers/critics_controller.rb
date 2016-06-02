@@ -1,7 +1,8 @@
 class CriticsController < ApplicationController
 
-  # def index
-  # end
+  def index
+    @critics = Critic.all
+  end
 
   def show
     @critic = Critic.find(params[:id])
@@ -12,6 +13,11 @@ class CriticsController < ApplicationController
   # end
 
   def edit
+  end
+
+  def partial
+    @critic = Critic.find(current_user.id)
+    render "layouts/_usernav", layout: false
   end
 
   def create

@@ -26,12 +26,12 @@
       <% end %>
       <tr>
         <td>Artistic</td>
-          <td><input id="artistic" type="text" size=2 name="rubric6" placeholder=" / 50"></td>
+          <td><input id="artistic" type="text" size=2 name="review[rubric6]" placeholder=" / 50" value="<%=@review.ratings.split(',')[5]%>"></td>
       </tr>
     </table>
 
     <%= f.label :content %><br>
-    <%= f.text_area :content, :class => 'content' %>
+    <%= f.text_area :content, :class => 'content', :id => 'review-content' %>
 
     <%= f.submit %>
 

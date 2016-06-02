@@ -17,7 +17,7 @@ module ReviewsHelper
   end
 
   def is_editable?(review)
-    return true if review.event.pub_date > Date.today
+    return true if review && review.event.pub_date > Date.today
     return false
   end
 

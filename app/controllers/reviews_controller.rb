@@ -20,11 +20,18 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def draftsave
+    review = Review.find(params["review_id"])
+    review.draft = params["fieldtext"]
+    review.save
+    render json: {"foo"=>"bar"}
+  end
+
   def index
   end
 
   def show
-    @labels = ["Writing","Acting","Directing","Spec Effects","Score","Artistic"]
+    @labels = ["Writing","Acting","Directing","Special Effects","Score","Artistic"]
     @review = Review.find(params[:id])
     @total = @review.ratings.split(',').map{|x| x.to_i}.reduce(:+)
   end
@@ -43,15 +50,14 @@ class ReviewsController < ApplicationController
 
 
   def edit
-    @labels = ["Writing","Acting","Directing","Spec Effects","Score","Artistic"]
+    @labels = ["Writing","Acting","Directing","Special Effects","Score","Artistic"]
     @review = Review.find(params[:id])
-
-    if @review.critic_id != session[:user_id]
-      redirect_to '/'
+    if @review.draft != ""
+      @review.content = @review.draft
     end
 
-    if @review.event.pub_date <= Date.today
-      redirect_to @review 
+    if @review.critic_id != session[:user_id] || @review.event.pub_date <= Date.today
+      redirect_to @review
     end
 
   end
@@ -75,9 +81,10 @@ class ReviewsController < ApplicationController
     rubrics_string = rubrics_to_string(params[:review])
     @review = Review.find(params[:id])
     @review.update_attributes({content: params[:review][:content], ratings: rubrics_string})
+    @review.draft = ""
     if @review.critic_id == session[:user_id]
       if @review.save
-        redirect_to @review.event
+        redirect_to @review
       else
         render "review/edit"
       end

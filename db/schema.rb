@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160330135930) do
+ActiveRecord::Schema.define(version: 20160330144529) do
 
   create_table "critics", force: :cascade do |t|
     t.string   "username"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20160330135930) do
     t.string   "ratings"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text     "draft"
   end
 
   add_index "reviews", ["critic_id"], name: "index_reviews_on_critic_id"

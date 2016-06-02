@@ -13,6 +13,11 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find(params[:id])
+    if @event.creator_id == session[:user_id] && @event.pub_date > Date.today
+      render "events/edit"
+    else
+      redirect_to @event
+    end
   end
 
   def create

@@ -10,10 +10,13 @@
 
 	<h2>Review for <%= @review.movie.name %></h2>
 	<h3><%= @review.critic.username %></h3>
+	<% if current_user != nil %>
+		<button class="aButton" onclick="location.href='/events/<%= @review.event.id %>';">BACK TO EVENT</button>
+	<% end %>
 
 	<div class="review-images">
-		<img src="<%= @review.critic.profile_image %>">
-		<img src="<%= @review.movie.img_url %>">
+		<a href="/critics/<%=@review.critic.id%>"><img src="<%= @review.critic.profile_image %>"></a>
+		<a href="/movies/<%=@review.movie.id%>"><img src="<%= @review.movie.movie_image.url %>"></a>
 	</div>
 <style>
 .review_scores {
@@ -30,29 +33,34 @@
 	<div class="rating-criterias">
 		<% @review.ratings.split(',').each_with_index do |val,index| %>
 			<%if index < 5 %>
-			<div class="bar" style="background-color: black ;width: <%= val %>0%;height: 20px">
-				<p><%= @labels[index].upcase %> | <span class="review_scores"><%= val %> / 10</span></p>
+			<% width_val = 10 + (val.to_i * 9) %>
+			<div class="bar" style="width: <%= width_val %>%;height: 20px">
+				<p><%= @labels[index].upcase %> <span class="review_scores"><%= val %> / 10</span></p>
 			</div>
 			<% else %>
-			<div class="bar" style="background-color: black ;width: <%= val %>%;height: 20px">
-				<p><%= @labels[index].upcase %> | <span class="review_scores"><%= val %> / 50</span></p>
+			<div class="bar" style="width: <%= ((val.to_i * 2) + 10) %>%;height: 20px">
+				<p><%= @labels[index].upcase %> <span class="review_scores"><%= val %> / 50</span></p>
 			</div>
 			<% end %>
 		<% end %>
-		
-		<div class="bar" style="background-color: black; width: <%= @total %>%;height:20px;"><p>TOTAL | <span class="review_scores"><%= @total %> / 100</span></p></div>
-		<div id="total_outline"></div>
 	</div>
 
 	<div class="rating-content">
-		<p><%= @review.content %></p>
+		<div class="review-paragraph">
+			<%= simple_format(@review.content.gsub(/\n/, '<br>'))%>
+		</div>
+		<div class="scorecard" style="background-color: rgb(<%=255-(@total * 2.5).to_i%>,<%=255-(@total * 2.5).to_i%>,<%=255-(@total * 2.5).to_i%>)"><%=@total%></div>
 	</div>
 
-
+	<% if @review.critic_id == session[:user_id] %>
+		<% if @review.event.pub_date > Date.today %>
+			<a class="aButton" href="/reviews/<%=@review.id%>/edit">EDIT REVIEW</a>
+		<% end %>
+	<% end %>
 	<div class="social">
-		<div class="fa  fa-facebook-square"></div>
-
-
+		<a href="#">
+			<div class="fa  fa-facebook-square"></div>
+		</a>
 		<a href="https://twitter.com/share">
 			<div class="fa fa-twitter-square"></div>
 		</a>

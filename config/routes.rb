@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  get "/" => 'sessions#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
-  resources :critics, except: [:new,:index]
+  get '/critics/partial' => 'critics#partial'
+  resources :critics, except: [:new]
 
   post '/invitations/new' => 'invitations#new'
   delete '/invitations/:id' => 'invitations#delete'
@@ -12,6 +14,7 @@ Rails.application.routes.draw do
   resources :movies
   get '/reviews/new/:event_id' => 'reviews#new'
   resources :reviews
+  post '/reviews/:id/draftsave' => 'reviews#draftsave'
   post '/reviews/invite_handler' => 'reviews#invite_handler'   #not restful. sorry
 
 
@@ -19,7 +22,7 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  root 'sessions#index'
+  
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
